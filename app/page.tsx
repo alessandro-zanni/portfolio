@@ -1,25 +1,28 @@
+import { Colophon } from "@/components/portfolio/colophon"
 import { Contact } from "@/components/portfolio/contact"
 import { Education } from "@/components/portfolio/education"
 import { Experience } from "@/components/portfolio/experience"
-import { Footer } from "@/components/portfolio/footer"
-import { Hero } from "@/components/portfolio/hero"
-import { Nav } from "@/components/portfolio/nav"
+import { Inventory } from "@/components/portfolio/inventory"
+import { Marks, Masthead } from "@/components/portfolio/masthead"
 import { Projects } from "@/components/portfolio/projects"
-import { Skills } from "@/components/portfolio/skills"
+import { StepTracker } from "@/components/portfolio/step-tracker"
 
 export default function Page() {
   return (
-    <div className="min-h-svh">
-      <Nav />
-      <main className="mx-auto flex max-w-3xl flex-col gap-10 px-4 pb-16">
-        <Hero />
-        <Experience />
-        <Projects />
-        <Skills />
-        <Education />
-        <Contact />
+    <div className="min-h-svh bg-blueprint">
+      <Masthead />
+      <StepTracker />
+      <Marks />
+      <main className="grid-ground">
+        <div className="mx-auto flex max-w-5xl flex-col gap-16 px-5 py-14 sm:px-8 sm:py-20">
+          <Experience />
+          <Projects />
+          <Inventory />
+          <Education />
+          <Contact />
+        </div>
       </main>
-      <Footer />
+      <Colophon />
     </div>
   )
 }
