@@ -1,0 +1,219 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-08T00:00:00Z",
+  "title": "Design System: Alessandro Zanni Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "blueprint": {
+        "role": "neutral",
+        "displayName": "Blueprint Sky",
+        "canonical": "#a9dffb",
+        "dark": "#08213c",
+        "tonalRamp": ["#062338", "#0c3a5c", "#155886", "#2b7fb8", "#5aa9dd", "#8fcdf0", "#a9dffb", "#d6f0fe"]
+      },
+      "blueprint-line": {
+        "role": "neutral",
+        "displayName": "Stud Grid Line",
+        "canonical": "#7cc4ef",
+        "dark": "#1c4370",
+        "tonalRamp": ["#0d2f4a", "#134a72", "#1c6699", "#2f83bf", "#54a2da", "#7cc4ef", "#a8dbf6", "#d6f0fd"]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Reading Plate White",
+        "canonical": "#ffffff",
+        "dark": "#0f2b48",
+        "tonalRamp": ["#0f2b48", "#1c3f60", "#33587a", "#5a7c9c", "#8aa6bf", "#bcccdb", "#e2e9f0", "#ffffff"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Diagram Ink",
+        "canonical": "#10100f",
+        "dark": "#eef5fd",
+        "tonalRamp": ["#10100f", "#26302f", "#3d4b4f", "#586a6f", "#7b8d92", "#a6b6bb", "#cfdadd", "#eef5fd"]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Soft Ink Blue-Slate",
+        "canonical": "#2a4658",
+        "dark": "#a6c6df",
+        "tonalRamp": ["#16242d", "#213845", "#2a4658", "#3d6076", "#5a8299", "#83a8bd", "#a6c6df", "#d2e4f0"]
+      },
+      "brick": {
+        "role": "primary",
+        "displayName": "Capability Brick Red",
+        "canonical": "#e02b26",
+        "dark": "#ff6152",
+        "tonalRamp": ["#3f0a08", "#6b110e", "#981914", "#c5221c", "#e02b26", "#ec5c53", "#f59188", "#fcc7c1"]
+      },
+      "bolt": {
+        "role": "primary",
+        "displayName": "Bolt Blue",
+        "canonical": "#0f6fc4",
+        "dark": "#2f86cf",
+        "tonalRamp": ["#062038", "#0a3a63", "#0e548f", "#0f6fc4", "#3b8dd6", "#69abe3", "#9ac8ee", "#cde4f8"]
+      },
+      "stud": {
+        "role": "secondary",
+        "displayName": "Build Yellow Stud",
+        "canonical": "#f5c000",
+        "dark": "#ffcf33",
+        "tonalRamp": ["#3d3000", "#665000", "#8f7000", "#b89000", "#e0b000", "#f5c000", "#ffd54d", "#ffe999"]
+      },
+      "plate": {
+        "role": "neutral",
+        "displayName": "Plate Grey Divider",
+        "canonical": "#d7dbde",
+        "dark": "#5b7ba6",
+        "tonalRamp": ["#2b3033", "#41474b", "#5c6469", "#7c868c", "#9fa8ad", "#c0c7cb", "#d7dbde", "#eef0f1"]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted Sky Tint",
+        "canonical": "#cbe9fb",
+        "dark": "#16304c",
+        "tonalRamp": ["#0c2a40", "#123a58", "#1b5580", "#2f80b3", "#5aa6d8", "#8fc8ec", "#cbe9fb", "#e8f6fe"]
+      },
+      "on-bolt": {
+        "role": "neutral",
+        "displayName": "On-Bolt White",
+        "canonical": "#ffffff",
+        "tonalRamp": ["#1a1a1a", "#333333", "#555555", "#808080", "#aaaaaa", "#cccccc", "#eeeeee", "#ffffff"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Masthead set-name only — 'ALESSANDRO / ZANNI'. One per page, uppercase." },
+      "headline": { "displayName": "Headline", "purpose": "Section heads (SectionHead h2), paired with a bolt-filled step numeral." },
+      "title": { "displayName": "Title", "purpose": "Company/project name inside a build step; Education and Colophon sub-heads; the step numeral glyph." },
+      "body": { "displayName": "Body", "purpose": "All prose. Measure capped 60-64ch. Masthead lead steps up to 1-1.125rem." },
+      "label": { "displayName": "Label", "purpose": "Small all-caps field labels ('Pieces in this set', 'Colophon'). Carried as-built, not a sanctioned pattern." },
+      "mono": { "displayName": "Mono", "purpose": "Dates, role periods, x-N counts, nav step indices. Data numbers only — never prose or labels." }
+    },
+    "shadows": [
+      { "name": "plate-lift", "value": "0 3px 14px -4px rgba(9, 20, 35, 0.22)", "purpose": "The only shadow in the system. Soft blurred drop under the white Plate, lifting the reading surface off the gridded ground. Not a hard offset shadow." }
+    ],
+    "motion": [
+      { "name": "reveal-piece", "value": "opacity/transform 0.44s cubic-bezier(0.2, 0.9, 0.25, 1)", "purpose": "The one authored motion: a build step settles from translateY(-12px)+opacity 0 into place on scroll-in. Applied only after mount so no-JS renders visible." },
+      { "name": "press-set", "value": "scale(1.03)->scale(1) with fade, 0.5s cubic-bezier(0.16, 1, 0.3, 1) both", "purpose": "Used once, on the masthead set-name at load." },
+      { "name": "action-press", "value": "translateY(0.125rem) on :active", "purpose": "The physical button press on ActionLink." },
+      { "name": "reduced-motion", "value": "all animation/transition durations forced to 0.001ms", "purpose": "Global prefers-reduced-motion override in globals.css." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "lg", "value": "1024px" }
+    ],
+    "grid": [
+      { "name": "container", "value": "max-width 64rem (max-w-5xl), padding-inline 1.25rem rising to 2rem at sm" },
+      { "name": "stud-grid", "value": "radial-gradient dot pattern, --grid-unit 26px spacing, blueprint-line at 45% opacity, centered top — the grid-ground utility" },
+      { "name": "section-gap", "value": "4rem between main sections; 2rem between build steps" },
+      { "name": "build-step-grid", "value": "grid-cols-[2.75rem_1fr] — 44px numeral/stack rail + content column, joined by a 2px ink connector line" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Action Link — Primary",
+      "kind": "button",
+      "refersTo": "action-link-primary",
+      "description": "The filled call-to-action, drawn as an instruction-booklet button. Used for 'Email Alessandro'.",
+      "html": "<a class=\"ds-action-primary\" href=\"#\">Email Alessandro<svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></a>",
+      "css": ".ds-action-primary { display: inline-flex; align-items: center; gap: 0.5rem; border: 2px solid var(--ink, #10100f); background: var(--bolt, #0f6fc4); color: #fff; padding: 0.625rem 1rem; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: -0.01em; text-decoration: none; border-radius: 0; transition: transform 0.12s ease; } .ds-action-primary:active { transform: translateY(0.125rem); } .ds-action-primary:focus-visible { outline: 3px solid var(--bolt, #0f6fc4); outline-offset: 2px; }"
+    },
+    {
+      "name": "Action Link — Secondary",
+      "kind": "button",
+      "refersTo": "action-link-secondary",
+      "description": "The keyline-only button. Used for 'Download CV'.",
+      "html": "<a class=\"ds-action-secondary\" href=\"#\" download><svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 3v12M7 11l5 5 5-5M5 21h14\"/></svg>Download CV</a>",
+      "css": ".ds-action-secondary { display: inline-flex; align-items: center; gap: 0.5rem; border: 2px solid var(--ink, #10100f); background: #fff; color: var(--ink, #10100f); padding: 0.625rem 1rem; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: -0.01em; text-decoration: none; border-radius: 0; transition: transform 0.12s ease, background 0.12s ease; } .ds-action-secondary:hover { background: var(--muted, #cbe9fb); } .ds-action-secondary:active { transform: translateY(0.125rem); } .ds-action-secondary:focus-visible { outline: 3px solid var(--bolt, #0f6fc4); outline-offset: 2px; }"
+    },
+    {
+      "name": "Nav Step Chip",
+      "kind": "nav",
+      "refersTo": "nav-step",
+      "description": "One numbered section link in the sticky step-tracker. Active state is scroll-driven via IntersectionObserver.",
+      "html": "<ol class=\"ds-nav\"><li><a class=\"ds-nav-chip\" href=\"#experience\"><span class=\"ds-nav-n\">01</span><span>Experience</span></a></li><li><a class=\"ds-nav-chip ds-nav-chip--active\" href=\"#projects\" aria-current=\"true\"><span class=\"ds-nav-n\">02</span><span>Projects</span></a></li></ol>",
+      "css": ".ds-nav { display: flex; gap: 0.5rem; list-style: none; margin: 0; padding: 0; } .ds-nav-chip { display: inline-flex; align-items: center; gap: 0.375rem; border: 2px solid var(--ink, #10100f); background: #fff; color: var(--ink, #10100f); padding: 0.25rem 0.5rem; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: -0.01em; text-decoration: none; border-radius: 0; transition: background 0.12s ease; } .ds-nav-chip:hover { background: var(--muted, #cbe9fb); } .ds-nav-chip--active, .ds-nav-chip[aria-current=\"true\"] { background: var(--bolt, #0f6fc4); color: #fff; } .ds-nav-n { font-family: 'Geist Mono', ui-monospace, Menlo, monospace; font-size: 0.7rem; opacity: 0.7; }"
+    },
+    {
+      "name": "Plate",
+      "kind": "card",
+      "refersTo": "plate",
+      "description": "The white keylined reading surface. Every panel of substance is a Plate on the gridded blueprint ground.",
+      "html": "<div class=\"ds-plate\"><p class=\"ds-plate-label\">Pieces in this set</p><p>A white reading plate with the world's 2px ink keyline and the single soft drop shadow.</p></div>",
+      "css": ".ds-plate { border: 2px solid var(--ink, #10100f); background: #fff; color: var(--ink, #10100f); padding: 1.25rem; border-radius: 0; box-shadow: 0 3px 14px -4px rgba(9, 20, 35, 0.22); font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-size: 0.875rem; line-height: 1.6; } .ds-plate-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft, #2a4658); margin: 0 0 0.75rem; }"
+    },
+    {
+      "name": "Numeral",
+      "kind": "custom",
+      "refersTo": "numeral",
+      "description": "The step marker — a heavy grotesque two-digit numeral in a 44px keylined square. Ink tone on build steps, bolt tone on section heads.",
+      "html": "<span class=\"ds-numeral\">01</span><span class=\"ds-numeral ds-numeral--step\">02</span>",
+      "css": ".ds-numeral { display: inline-grid; place-items: center; width: 44px; height: 44px; border: 2px solid var(--ink, #10100f); background: var(--ink, #10100f); color: #fff; font-family: 'Archivo Black', Archivo, 'Helvetica Neue', Arial, sans-serif; font-size: 1.5rem; line-height: 1; font-variant-numeric: tabular-nums; border-radius: 0; } .ds-numeral--step { background: var(--bolt, #0f6fc4); color: #fff; }"
+    },
+    {
+      "name": "Piece Tag",
+      "kind": "chip",
+      "refersTo": "piece-tag",
+      "description": "The build-yellow count call-out on a new-capability piece, e.g. 'live · 4 channels'. Mono, near-black text, fixed contrast in both themes.",
+      "html": "<span class=\"ds-piece-tag\">live · 4 channels</span>",
+      "css": ".ds-piece-tag { display: inline-flex; align-items: center; border: 2px solid var(--ink, #10100f); background: var(--stud, #f5c000); color: #141210; padding: 0.125rem 0.375rem; font-family: 'Geist Mono', ui-monospace, Menlo, monospace; font-size: 0.7rem; line-height: 1; font-weight: 500; border-radius: 0; }"
+    },
+    {
+      "name": "Part Chip",
+      "kind": "chip",
+      "refersTo": "part-chip",
+      "description": "A single tech-stack part in a step's parts list. Thin 1px keyline — chip scale, not container scale.",
+      "html": "<ul class=\"ds-parts\"><li>TypeScript</li><li>React</li><li>Node.js</li></ul>",
+      "css": ".ds-parts { display: flex; flex-wrap: wrap; gap: 0.375rem; list-style: none; margin: 0; padding: 0; } .ds-parts li { border: 1px solid var(--ink, #10100f); background: #fff; color: var(--ink, #10100f); padding: 0.125rem 0.375rem; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-size: 0.72rem; line-height: 1.4; font-weight: 500; border-radius: 0; }"
+    },
+    {
+      "name": "Isometric Brick",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "The signature mark. A 2x2 iso brick in one of four tones; face shading derived from the tone via color-mix. The 'ghost' variant is a dashed unfilled outline — a piece not yet placed.",
+      "html": "<span class=\"ds-brick\"><svg viewBox=\"0 0 100 100\" width=\"36\" height=\"36\" stroke=\"#10100f\" stroke-width=\"3\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M9 33 L50 54 L50 88 L9 67 Z\" fill=\"#af221c\"/><path d=\"M91 33 L50 54 L50 88 L91 67 Z\" fill=\"#e02b26\"/><path d=\"M50 12 L91 33 L50 54 L9 33 Z\" fill=\"#e64f4a\"/><ellipse cx=\"34\" cy=\"27\" rx=\"7\" ry=\"4\" fill=\"#e64f4a\"/><ellipse cx=\"52\" cy=\"18\" rx=\"7\" ry=\"4\" fill=\"#e64f4a\"/><ellipse cx=\"48\" cy=\"39\" rx=\"7\" ry=\"4\" fill=\"#e64f4a\"/><ellipse cx=\"66\" cy=\"30\" rx=\"7\" ry=\"4\" fill=\"#e64f4a\"/></svg><svg viewBox=\"0 0 100 100\" width=\"36\" height=\"36\" fill=\"none\" stroke=\"#10100f\" stroke-width=\"3\" stroke-dasharray=\"6 5\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M50 12 L91 33 L50 54 L9 33 Z\"/><path d=\"M9 33 L50 54 L50 88 L9 67 Z\"/><path d=\"M91 33 L50 54 L50 88 L91 67 Z\"/></svg></span>",
+      "css": ".ds-brick { display: inline-flex; gap: 0.5rem; align-items: center; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Build-Instruction Booklet",
+    "overview": "The page is the printed instruction sheet that ships inside a brick set. The reader does not browse a portfolio; they follow numbered steps and watch a model of one engineer get assembled — one bright new piece clicking onto the stack per role. Every surface is drawn the way an instruction diagram is drawn: a sky-blue instruction-page ground under a faint stud grid, white reading plates floated on top, and a hard 2px ink keyline around every container. Illustration, not photography — the recurring mark is an isometric 2x2 brick.\n\nThe world is deliberately loud in structure and quiet in voice. Colour is rationed to three jobs and never decorates: brick-red marks the single new capability a step adds, bolt-blue is the only thing you can click, build-yellow tags the parts inventory. Type is two families doing opposite jobs — a heavy grotesque (Archivo Black) shouting uppercase headings and step numerals, Archivo carrying every sentence, and monospace reserved for numbers that are data. The layout refuses the dev-portfolio hero and the equal-weight section scroll: the first viewport is a set-box masthead with a spec panel, and the sections are numbered build steps of descending weight.\n\nConfirmed rejections: no hero card, no glossy gradients, no photography, no drop-shadow depth stack, no second interactive colour. Dark mode is not a re-theme — it is 'the night build', the same instruction sheet printed on blue-black.",
+    "keyCharacteristics": [
+      "Sky-blue gridded ground; white keylined plates; illustration over image.",
+      "2px ink keyline is the container grammar — depth is line-work, not shadow.",
+      "Three rationed colours, each with exactly one job.",
+      "Heavy grotesque uppercase for headings and numerals; mono only for counts and dates.",
+      "Content reads as numbered assembly steps; a brick stack grows one piece per role.",
+      "One authored motion: a piece settling into place on scroll-in."
+    ],
+    "rules": [
+      { "name": "The Bolt-Only Rule", "body": "Bolt blue is the only colour that signals 'interactive'. If it's blue, it's a link, a control, or a directional arrow — never a heading, a rule, or a fill for emphasis. Nothing else in the system is blue-for-clicking.", "section": "colors" },
+      { "name": "The One New Piece Rule", "body": "Brick red appears exactly once per build step — on the single new capability that step adds. It is never used for body text, borders, bullet marks, or decoration. Its scarcity is the argument the page is making.", "section": "colors" },
+      { "name": "The Yellow Is Inventory Rule", "body": "Stud yellow only tags parts and counts. If yellow appears, it is labelling a piece, a bin, or a quantity — it is never a surface, a heading colour, or a general accent.", "section": "colors" },
+      { "name": "The Grotesque Numeral Rule", "body": "Archivo Black is reserved for uppercase headings and the step numerals. It never sets a sentence, never runs in sentence case, and never carries body copy.", "section": "typography" },
+      { "name": "The Mono-For-Counts Rule", "body": "Geist Mono is only for a number that is a fact — a date, a period, a quantity, an index. If it isn't countable data, it's set in Archivo.", "section": "typography" },
+      { "name": "The Flat-Keyline Rule", "body": "Depth is the 2px ink border and the brick line-work. No element casts a shadow except the Plate, whose shadow is soft and blurred (0 3px 14px -4px). No hard offset shadows (Npx Npx 0) anywhere — that is a different world's costume, not this one's diagram line.", "section": "elevation" },
+      { "name": "The One Motion Rule", "body": "The page has a single authored motion — a piece settling into place. The assembly stack does not animate; nothing loops; nothing moves on hover. If it moves, it is a piece arriving, once.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do wrap every container in a 2px ink keyline (border-2 border-ink). It is the world's line-work.",
+      "Do keep corners square. Reach for the --radius-* scale only inside stock shadcn components, never on portfolio surfaces.",
+      "Do ration colour: brick = the one new thing, bolt = the one interactive thing, stud = parts and counts. One job each.",
+      "Do set headings and step numerals in Archivo Black, uppercase, tight tracking; set every sentence in Archivo.",
+      "Do use Geist Mono only for dates, periods, counts, and indices.",
+      "Do cap reading measure — body copy at ~62-64ch.",
+      "Do float white Plates on the gridded blueprint ground; use the single soft Plate-lift shadow and no other.",
+      "Do keep text on any stud-yellow fill at near-black (#141210) in both themes.",
+      "Do treat dark mode as a polarity flip of the same token names — do not introduce dark-only colours or roles."
+    ],
+    "donts": [
+      "Don't add a second interactive colour, or use bolt blue for anything that isn't a link, control, or directional arrow.",
+      "Don't use brick red for body text, borders, bullet marks, or decoration — only the one new capability per step.",
+      "Don't use any hard offset shadow (Npx Npx 0) or stack multiple shadows. This is an instruction diagram, not a neobrutalist surface.",
+      "Don't build a hero card or give sections equal visual weight — the page is descending numbered steps.",
+      "Don't animate on hover, loop anything, or animate the assembly stack. One motion only.",
+      "Don't introduce photography or gradients beyond the stud-grid dot pattern.",
+      "Don't set body copy or labels in Archivo Black, or set prose in mono."
+    ]
+  }
+}

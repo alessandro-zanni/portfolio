@@ -5,13 +5,21 @@ export type Job = {
   company: string
   location: string
   period: string
+  /** The one bright new capability this step clicks onto the stack. */
+  piece: string
+  /** Compact count tag for the 1:1 call-out box, e.g. "prod ×4 channels". */
+  pieceTag?: string
   blurb?: string
   bullets: string[]
   stack?: string[]
+  /** Junior/early roles render as a compact single-step frame. */
+  compact?: boolean
 }
 
 export type Project = {
   title: string
+  /** Short label for the 1:1 call-out box. */
+  piece: string
   subtitle: string
   bullets: string[]
   stack?: string[]
@@ -23,8 +31,9 @@ export type Link = {
   handle: string
 }
 
-// TODO(alessandro): GitHub URL is not in the CV — set your real profile here.
-const GITHUB_URL = "https://github.com/alessandrozanni"
+// TODO(alessandro): the GitHub URL is not in the CV. Set your real profile URL
+// here to add the link; left null, the site does not claim a GitHub handle.
+const GITHUB_URL = null as string | null
 
 export const profile = {
   name: "Alessandro Zanni",
@@ -33,10 +42,28 @@ export const profile = {
   location: "Barcelona, Spain",
   email: "azanni098@gmail.com",
   phone: "+39 333 743 4909",
+  /** The one plain-English line a skimmer must get. */
+  lead: "Full-stack engineer who builds production conversational-AI systems and owns the stack end to end — Postgres to self-hosted infra. Trained as a designer.",
   pitch:
     "Full Stack Software Engineer with 6+ years across web development and AI-powered systems. Currently at Heres, specializing in Generative AI and LLM integrations — designing conversational AI architectures, managing multi-channel chatbot platforms, and building scalable backend systems. Expert in React, Node.js, TypeScript, and cloud infrastructure (AWS, PostgreSQL). Comfortable moving between deep system design and cross-functional collaboration with product and non-technical stakeholders.",
   cv: "/alessandro-zanni-cv.pdf",
 }
+
+/** "Pieces in this set" — the quick spec panel on the masthead. */
+export const spec: { label: string; value: string }[] = [
+  { label: "Experience", value: "6+ years" },
+  { label: "Based in", value: "Barcelona, ES" },
+  { label: "Build", value: "Full-stack + AI/LLM" },
+  { label: "Status", value: "Open to work" },
+]
+
+/** The four things Alessandro is known for — the feature strip under the lead. */
+export const marks: { title: string; note: string }[] = [
+  { title: "Production AI", note: "LLM & conversational systems on live traffic, not demos" },
+  { title: "End to end", note: "Data model, backend, frontend, deploy, self-hosted infra" },
+  { title: "Designer's eye", note: "Formal training in graphics, branding, and typography" },
+  { title: "Real range", note: "Employee & freelance · web, mobile, e-commerce, DevOps" },
+]
 
 export const links: Link[] = [
   { label: "email", href: `mailto:${profile.email}`, handle: profile.email },
@@ -45,7 +72,9 @@ export const links: Link[] = [
     href: "https://linkedin.com/in/alessandro-zanni-320262147",
     handle: "in/alessandro-zanni",
   },
-  { label: "github", href: GITHUB_URL, handle: GITHUB_URL.replace("https://", "") },
+  ...(GITHUB_URL
+    ? [{ label: "github", href: GITHUB_URL, handle: GITHUB_URL.replace("https://", "") }]
+    : []),
 ]
 
 export const experience: Job[] = [
@@ -54,16 +83,16 @@ export const experience: Job[] = [
     company: "Heres s.r.l.",
     location: "Bologna, Italy",
     period: "08/2021 – Present",
+    piece: "Production LLM & conversational-AI systems",
+    pieceTag: "live · 4 channels",
     blurb:
       "Leading AI-driven platform specializing in custom AI agents, conversational AI systems, and business automation.",
     bullets: [
-      "Generative AI & LLM Development — designed and implemented integrations with large language models and AI frameworks, enhancing chatbot intelligence and conversational capabilities",
-      "Conversational AI Architecture — architected and maintained scalable chatbot management systems handling real-time conversations across multiple channels (Telegram, WhatsApp, Facebook Messenger, Zendesk)",
-      "Real-time Communication — implemented Socket.IO-based messaging infrastructure for end-to-end encrypted conversations and notification systems (PubNub)",
-      "Enterprise Integrations — developed and maintained connectors and plugins for third-party APIs and internal systems, enabling seamless channel integration",
-      "Full-stack Development — built React-based management consoles and Node.js backend services for AI agent orchestration",
-      "Alexa Smart Properties Project — developed a management console for senior care facilities using Amazon Alexa devices (AWS partnership)",
-      "Database Architecture — designed and optimized relational (MySQL, PostgreSQL) and non-relational (Firebase) database solutions for conversational data",
+      "Architected and maintained scalable chatbot management systems handling real-time conversations across Telegram, WhatsApp, Facebook Messenger, and Zendesk",
+      "Designed and shipped integrations with large language models and AI frameworks, enhancing chatbot intelligence and conversational capabilities",
+      "Built Socket.IO messaging infrastructure for end-to-end encrypted conversations, with PubNub notification systems",
+      "Built React management consoles and Node.js backend services for AI agent orchestration, plus connectors for third-party and internal APIs",
+      "Designed relational (MySQL, PostgreSQL) and non-relational (Firebase) database solutions for conversational data; built the Alexa Smart Properties console for senior-care facilities (AWS partnership)",
     ],
     stack: [
       "TypeScript",
@@ -83,6 +112,8 @@ export const experience: Job[] = [
     company: "SpotView S.r.l.",
     location: "Bologna, Italy",
     period: "09/2023 – 12/2024",
+    piece: "Headless e-commerce at retail scale",
+    pieceTag: "Tigotà · Pinalli",
     blurb: "Headless e-commerce development for major retail clients.",
     bullets: [
       "Headless E-commerce Development — built responsive frontend applications for high-traffic e-commerce platforms (Tigotà, Pinalli)",
@@ -97,6 +128,8 @@ export const experience: Job[] = [
     company: "ICT-GROUP s.r.l.",
     location: "Reggio Emilia, Italy",
     period: "12/2020 – 07/2021",
+    piece: "Cross-platform mobile + SSO",
+    pieceTag: "iOS · Android",
     blurb: "Enterprise software and mobile application development.",
     bullets: [
       "Enterprise Systems Integration — integrated modules and added functionalities to company management systems (EGGS Next, EGGS HR)",
@@ -111,6 +144,8 @@ export const experience: Job[] = [
     company: "Studio il Granello s.c.s.",
     location: "Correggio, Italy",
     period: "04/2018 – 12/2020",
+    piece: "Full-stack delivery, 15+ sites",
+    pieceTag: "15+ shipped",
     blurb: "Custom web development and digital solutions.",
     bullets: [
       "Full-stack Web Development — designed and developed 15+ complete website solutions from backend to frontend",
@@ -126,11 +161,12 @@ export const experience: Job[] = [
     company: "Graffo grafica adesiva s.n.c.",
     location: "Arceto di Scandiano, Italy",
     period: "11/2017 – 04/2018",
+    piece: "Design foundation — print, branding, typography",
+    pieceTag: "the base plate",
+    compact: true,
     blurb: "Print and digital design services.",
     bullets: [
-      "Graphic Production — managed print design workflow including cutting, covering, and assembly",
-      "Digital Design — created vector graphics and retouched images using Adobe Creative Suite (Illustrator, Photoshop)",
-      "On-site Installation — coordinated installation of large-format graphics for commercial and residential projects",
+      "Vector graphics and image retouching in Adobe Creative Suite; print production and large-format installation",
     ],
   },
 ]
@@ -138,6 +174,7 @@ export const experience: Job[] = [
 export const projects: Project[] = [
   {
     title: "CRM Platform for Electrical Materials Distributor",
+    piece: "B2B sales-operations platform",
     subtitle:
       "Custom business management system for offer and client management (B2B sales operations platform)",
     bullets: [
@@ -150,6 +187,7 @@ export const projects: Project[] = [
   },
   {
     title: "Freelance Web Solutions",
+    piece: "Client sites, end to end",
     subtitle: "Responsive corporate and portfolio websites for multiple B2B and B2C clients",
     bullets: [
       "3+ production websites with custom integrations and SEO optimization",
@@ -159,6 +197,7 @@ export const projects: Project[] = [
   },
   {
     title: "Infrastructure & Self-Hosting",
+    piece: "DevOps & self-hosted infra",
     subtitle: "Self-hosted solutions and DevOps infrastructure for personal projects and client systems",
     bullets: [
       "Docker containerization and orchestration for microservices and development environments",
@@ -187,24 +226,31 @@ export const education = [
   },
 ]
 
-export const skills: { group: string; items: string }[] = [
+/** The parts inventory — each bin a group of pieces the builds are made from. */
+export const inventory: { bin: string; items: string[] }[] = [
   {
-    group: "languages_frameworks",
-    items: "JavaScript/TypeScript, React, Next.js, Vue.js, Angular, Node.js, Express",
+    bin: "Languages & frameworks",
+    items: ["TypeScript", "React", "Next.js", "Vue.js", "Angular", "Node.js", "Express"],
   },
-  { group: "databases", items: "PostgreSQL, MySQL, Firebase, MongoDB" },
+  { bin: "Databases", items: ["PostgreSQL", "MySQL", "Firebase", "MongoDB"] },
   {
-    group: "ai_conversational",
-    items:
-      "LLM integration, Generative AI frameworks, Conversational AI & chatbot development, N8N workflow automation",
+    bin: "AI & conversational",
+    items: [
+      "LLM integration",
+      "Generative-AI frameworks",
+      "Chatbot development",
+      "N8N automation",
+    ],
   },
-  { group: "realtime_cloud", items: "Socket.IO, PubNub, AWS, Vercel, Supabase, Docker" },
   {
-    group: "design",
-    items:
-      "Adobe Creative Suite (Photoshop, Illustrator), UI/UX principles, responsive & mobile-first design",
+    bin: "Real-time & cloud",
+    items: ["Socket.IO", "PubNub", "AWS", "Vercel", "Supabase", "Docker"],
   },
-  { group: "tools_practices", items: "Git/GitHub, VS Code, JetBrains IDEs, Agile/Scrum" },
+  {
+    bin: "Design",
+    items: ["Adobe CS (Photoshop, Illustrator)", "UI/UX principles", "Mobile-first design"],
+  },
+  { bin: "Tools & practice", items: ["Git / GitHub", "VS Code", "JetBrains IDEs", "Agile / Scrum"] },
 ]
 
 export const languages = [

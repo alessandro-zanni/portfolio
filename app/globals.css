@@ -5,139 +5,204 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-    --font-heading: var(--font-mono);
     --font-sans: var(--font-sans);
+    --font-display: var(--font-display);
     --font-mono: var(--font-mono);
-    --color-sidebar-ring: var(--sidebar-ring);
-    --color-sidebar-border: var(--sidebar-border);
-    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-    --color-sidebar-accent: var(--sidebar-accent);
-    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-    --color-sidebar-primary: var(--sidebar-primary);
-    --color-sidebar-foreground: var(--sidebar-foreground);
-    --color-sidebar: var(--sidebar);
-    --color-chart-5: var(--chart-5);
-    --color-chart-4: var(--chart-4);
-    --color-chart-3: var(--chart-3);
-    --color-chart-2: var(--chart-2);
-    --color-chart-1: var(--chart-1);
-    --color-ring: var(--ring);
-    --color-input: var(--input);
-    --color-border: var(--border);
-    --color-destructive: var(--destructive);
-    --color-accent-foreground: var(--accent-foreground);
-    --color-accent: var(--accent);
-    --color-muted-foreground: var(--muted-foreground);
-    --color-muted: var(--muted);
-    --color-secondary-foreground: var(--secondary-foreground);
-    --color-secondary: var(--secondary);
-    --color-primary-foreground: var(--primary-foreground);
-    --color-primary: var(--primary);
-    --color-popover-foreground: var(--popover-foreground);
-    --color-popover: var(--popover);
-    --color-card-foreground: var(--card-foreground);
-    --color-card: var(--card);
-    --color-foreground: var(--foreground);
+    --font-heading: var(--font-display);
+
+    /* Instruction-book world */
+    --color-blueprint: var(--blueprint);
+    --color-blueprint-line: var(--blueprint-line);
+    --color-paper: var(--paper);
+    --color-ink: var(--ink);
+    --color-ink-soft: var(--ink-soft);
+    --color-brick: var(--brick);
+    --color-bolt: var(--bolt);
+    --color-stud: var(--stud);
+    --color-plate: var(--plate);
+
+    /* shadcn tokens mapped onto the world so stock components stay coherent */
     --color-background: var(--background);
-    --radius-sm: calc(var(--radius) * 0.6);
-    --radius-md: calc(var(--radius) * 0.8);
-    --radius-lg: var(--radius);
-    --radius-xl: calc(var(--radius) * 1.4);
-    --radius-2xl: calc(var(--radius) * 1.8);
-    --radius-3xl: calc(var(--radius) * 2.2);
-    --radius-4xl: calc(var(--radius) * 2.6);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-destructive: var(--destructive);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+
+    --radius-sm: 3px;
+    --radius-md: 5px;
+    --radius-lg: 8px;
+    --radius-xl: 12px;
 }
 
 :root {
-    --background: oklch(1 0 0);
-    --foreground: oklch(0.145 0 0);
-    --card: oklch(1 0 0);
-    --card-foreground: oklch(0.145 0 0);
-    --popover: oklch(1 0 0);
-    --popover-foreground: oklch(0.145 0 0);
-    --primary: oklch(0.205 0 0);
-    --primary-foreground: oklch(0.985 0 0);
-    --secondary: oklch(0.97 0 0);
-    --secondary-foreground: oklch(0.205 0 0);
-    --muted: oklch(0.97 0 0);
-    --muted-foreground: oklch(0.556 0 0);
-    --accent: oklch(0.97 0 0);
-    --accent-foreground: oklch(0.205 0 0);
-    --destructive: oklch(0.577 0.245 27.325);
-    --border: oklch(0.922 0 0);
-    --input: oklch(0.922 0 0);
-    --ring: oklch(0.708 0 0);
-    --chart-1: oklch(0.87 0 0);
-    --chart-2: oklch(0.556 0 0);
-    --chart-3: oklch(0.439 0 0);
-    --chart-4: oklch(0.371 0 0);
-    --chart-5: oklch(0.269 0 0);
-    --radius: 0.625rem;
-    --sidebar: oklch(0.985 0 0);
-    --sidebar-foreground: oklch(0.145 0 0);
-    --sidebar-primary: oklch(0.205 0 0);
-    --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.97 0 0);
-    --sidebar-accent-foreground: oklch(0.205 0 0);
-    --sidebar-border: oklch(0.922 0 0);
-    --sidebar-ring: oklch(0.708 0 0);
+    --blueprint: #a9dffb;
+    --blueprint-line: #7cc4ef;
+    --paper: #ffffff;
+    --ink: #10100f;
+    --ink-soft: #2a4658;
+    --brick: #e02b26;
+    --bolt: #0f6fc4;
+    --stud: #f5c000;
+    --plate: #d7dbde;
+
+    --background: var(--blueprint);
+    --foreground: var(--ink);
+    --card: var(--paper);
+    --card-foreground: var(--ink);
+    --popover: var(--paper);
+    --popover-foreground: var(--ink);
+    --primary: var(--bolt);
+    --primary-foreground: #ffffff;
+    --secondary: #ffffff;
+    --secondary-foreground: var(--ink);
+    --muted: #cbe9fb;
+    --muted-foreground: var(--ink-soft);
+    --accent: var(--stud);
+    --accent-foreground: var(--ink);
+    --destructive: var(--brick);
+    --border: var(--ink);
+    --input: var(--ink);
+    --ring: var(--bolt);
+    --radius: 5px;
+
+    --selection-bg: var(--stud);
+    --selection-fg: var(--ink);
+    --grid-unit: 26px;
 }
 
 .dark {
-    --background: oklch(0.145 0 0);
-    --foreground: oklch(0.985 0 0);
-    --card: oklch(0.205 0 0);
-    --card-foreground: oklch(0.985 0 0);
-    --popover: oklch(0.205 0 0);
-    --popover-foreground: oklch(0.985 0 0);
-    --primary: oklch(0.922 0 0);
-    --primary-foreground: oklch(0.205 0 0);
-    --secondary: oklch(0.269 0 0);
-    --secondary-foreground: oklch(0.985 0 0);
-    --muted: oklch(0.269 0 0);
-    --muted-foreground: oklch(0.708 0 0);
-    --accent: oklch(0.269 0 0);
-    --accent-foreground: oklch(0.985 0 0);
-    --destructive: oklch(0.704 0.191 22.216);
-    --border: oklch(1 0 0 / 10%);
-    --input: oklch(1 0 0 / 15%);
-    --ring: oklch(0.556 0 0);
-    --chart-1: oklch(0.87 0 0);
-    --chart-2: oklch(0.556 0 0);
-    --chart-3: oklch(0.439 0 0);
-    --chart-4: oklch(0.371 0 0);
-    --chart-5: oklch(0.269 0 0);
-    --sidebar: oklch(0.205 0 0);
-    --sidebar-foreground: oklch(0.985 0 0);
-    --sidebar-primary: oklch(0.488 0.243 264.376);
-    --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.269 0 0);
-    --sidebar-accent-foreground: oklch(0.985 0 0);
-    --sidebar-border: oklch(1 0 0 / 10%);
-    --sidebar-ring: oklch(0.556 0 0);
+    /* the "night build" — a proof of the same instruction sheet, printed on blue-black */
+    --blueprint: #08213c;
+    --blueprint-line: #1c4370;
+    --paper: #0f2b48;
+    --ink: #eef5fd;
+    --ink-soft: #a6c6df;
+    --brick: #ff6152;
+    --bolt: #2f86cf;
+    --stud: #ffcf33;
+    --plate: #5b7ba6;
+
+    --background: var(--blueprint);
+    --foreground: var(--ink);
+    --card: var(--paper);
+    --card-foreground: var(--ink);
+    --popover: var(--paper);
+    --popover-foreground: var(--ink);
+    --primary: var(--bolt);
+    --primary-foreground: #ffffff;
+    --secondary: var(--paper);
+    --secondary-foreground: var(--ink);
+    --muted: #16304c;
+    --muted-foreground: var(--ink-soft);
+    --accent: var(--stud);
+    --accent-foreground: #06121f;
+    --destructive: var(--brick);
+    --border: var(--ink);
+    --input: var(--ink);
+    --ring: var(--bolt);
+
+    --selection-bg: var(--stud);
+    --selection-fg: #06121f;
 }
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border;
     }
   body {
     @apply bg-background text-foreground;
+    font-synthesis-weight: none;
     }
   button:not(:disabled), [role="button"]:not(:disabled) {
     cursor: pointer;
     }
   html {
-    @apply font-mono;
+    @apply font-sans;
+    -webkit-tap-highlight-color: transparent;
+    }
+
+  /* Browser surfaces wear the world, not the UA defaults */
+  ::selection {
+    background: var(--selection-bg);
+    color: var(--selection-fg);
+    }
+  :focus-visible {
+    outline: 3px solid var(--bolt);
+    outline-offset: 2px;
+    }
+  html {
+    scrollbar-color: var(--ink-soft) transparent;
+    }
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+    }
+  ::-webkit-scrollbar-thumb {
+    background: var(--ink-soft);
+    border: 3px solid var(--blueprint);
+    border-radius: 999px;
+    }
+  ::-webkit-scrollbar-track {
+    background: transparent;
     }
 }
 
-@keyframes caret {
-  0%, 45% { opacity: 1; }
-  50%, 95% { opacity: 0; }
-  100% { opacity: 1; }
+/* The instruction page: a whisper of a stud grid on the sky-blue ground */
+@utility grid-ground {
+  background-image:
+    radial-gradient(
+      color-mix(in oklab, var(--blueprint-line) 45%, transparent) 1px,
+      transparent 1.5px
+    );
+  background-size: var(--grid-unit) var(--grid-unit);
+  background-position: center top;
 }
 
-@utility animate-caret {
-  animation: caret 1.1s steps(1) infinite;
+/* One authored motion: a new piece settling onto the stack */
+@keyframes piece-drop {
+  0%   { transform: translateY(-14px); opacity: 0; }
+  60%  { transform: translateY(2px); opacity: 1; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+@keyframes press-set {
+  0%   { transform: scale(1.03); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@utility animate-press-set {
+  animation: press-set 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Scroll-in "piece settles into place" — only after mount, so no-JS renders visible */
+.reveal-piece[data-mounted="true"] {
+  opacity: 0;
+  transform: translateY(-12px);
+  transition:
+    opacity 0.44s cubic-bezier(0.2, 0.9, 0.25, 1),
+    transform 0.44s cubic-bezier(0.2, 0.9, 0.25, 1);
+}
+.reveal-piece[data-mounted="true"][data-revealed="true"] {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
 }
