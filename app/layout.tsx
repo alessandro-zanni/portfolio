@@ -28,7 +28,7 @@ const title = `${profile.name} — ${profile.title}`
 
 // Set NEXT_PUBLIC_SITE_URL at deploy to the real domain; the fallback only
 // affects absolute URLs in OG/Twitter tags.
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://alessandrozanni.dev"
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.alessandrozanni.dev"
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
