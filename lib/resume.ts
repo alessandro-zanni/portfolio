@@ -31,9 +31,7 @@ export type Link = {
   handle: string
 }
 
-// TODO(alessandro): the GitHub URL is not in the CV. Set your real profile URL
-// here to add the link; left null, the site does not claim a GitHub handle.
-const GITHUB_URL = null as string | null
+const GITHUB_URL = "https://github.com/alessandro-zanni" as string | null
 
 export const profile = {
   name: "Alessandro Zanni",
