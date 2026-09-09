@@ -23,7 +23,7 @@ const contactRows = [
 
 export function Contact() {
   return (
-    <section id="contact" aria-labelledby="contact-heading" className="scroll-mt-16">
+    <section id="contact" aria-labelledby="contact-heading" className="scroll-mt-24">
       <SectionHead id="contact" n="04" title="Contact" note="Build complete. Here's how to reach the builder." />
 
       <Plate className="mt-8 p-5 sm:p-7">

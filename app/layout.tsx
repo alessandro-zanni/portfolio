@@ -26,9 +26,12 @@ const geistMono = Geist_Mono({
 
 const title = `${profile.name} — ${profile.title}`
 
+// Set NEXT_PUBLIC_SITE_URL at deploy to the real domain; the fallback only
+// affects absolute URLs in OG/Twitter tags.
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://alessandrozanni.dev"
+
 export const metadata: Metadata = {
-  // TODO(alessandro): set the real deploy domain before publishing.
-  metadataBase: new URL("https://alessandrozanni.dev"),
+  metadataBase: new URL(siteUrl),
   title,
   description: profile.pitch,
   authors: [{ name: profile.name }],

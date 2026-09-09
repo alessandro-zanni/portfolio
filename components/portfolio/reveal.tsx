@@ -22,6 +22,9 @@ export function Reveal({
   const [seen, setSeen] = useState(false)
 
   useEffect(() => {
+    // Skip the entrance entirely under reduced-motion — content just renders in place.
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return
+
     const raf = requestAnimationFrame(() => setMounted(true))
     const el = ref.current
     if (!el) return () => cancelAnimationFrame(raf)

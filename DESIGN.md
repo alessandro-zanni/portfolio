@@ -16,7 +16,7 @@ colors:
 typography:
   display:
     fontFamily: "Archivo Black, Archivo, Helvetica Neue, Arial, sans-serif"
-    fontSize: "clamp(2.6rem, 7.4vw, 4.75rem)"
+    fontSize: "clamp(2.35rem, 7.4vw, 4.75rem)"
     fontWeight: 400
     lineHeight: 0.9
     letterSpacing: "-0.035em"
@@ -161,7 +161,7 @@ The `.dark` class remaps the same token names to a blue-black print: blueprint `
 **Character:** A single grotesque superfamily doing two jobs at opposite extremes — Archivo Black as die-cut catalogue lettering, Archivo as plain instruction prose. The mono is the parts-list voice: it only ever speaks in numbers. `font-synthesis-weight: none` — no faux-bold fallback.
 
 ### Hierarchy
-- **Display** (Archivo Black 400, `clamp(2.6rem, 7.4vw, 4.75rem)`, line-height 0.9, tracking −0.035em, uppercase): The masthead set-name "ALESSANDRO / ZANNI" only. One per page.
+- **Display** (Archivo Black 400, `clamp(2.35rem, 7.4vw, 4.75rem)`, line-height 0.9, tracking −0.035em, uppercase): The masthead set-name "ALESSANDRO / ZANNI" only. One per page.
 - **Headline** (Archivo Black 400, 1.5–1.875rem, tracking-tight, uppercase): Section heads (`SectionHead` `<h2>`), paired with a bolt-filled step numeral.
 - **Title** (Archivo Black 400, 1.125rem, tracking-tight, uppercase): The company / project name inside a build step (`<h3>`), and the Education and Colophon sub-heads.
 - **Numeral** (Archivo Black 400, 1.5rem, `tabular-nums`): The two-digit step marker inside a 44px keylined square.

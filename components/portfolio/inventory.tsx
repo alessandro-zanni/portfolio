@@ -8,7 +8,7 @@ const totalParts = inventory.reduce((sum, bin) => sum + bin.items.length, 0)
 
 export function Inventory() {
   return (
-    <section id="skills" aria-labelledby="skills-heading" className="scroll-mt-16">
+    <section id="skills" aria-labelledby="skills-heading" className="scroll-mt-24">
       <SectionHead
         id="skills"
         n="03"

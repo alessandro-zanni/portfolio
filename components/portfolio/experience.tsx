@@ -7,7 +7,7 @@ export function Experience() {
   const n = experience.length
 
   return (
-    <section id="experience" aria-labelledby="experience-heading" className="scroll-mt-16">
+    <section id="experience" aria-labelledby="experience-heading" className="scroll-mt-24">
       <SectionHead
         id="experience"
         n="01"

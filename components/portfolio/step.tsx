@@ -20,7 +20,7 @@ function Numeral({ n, tone = "ink" }: { n: string; tone?: "ink" | "bolt" }) {
       className={cn(
         "grid h-11 w-11 shrink-0 place-items-center border-2 border-ink font-display text-2xl leading-none tabular-nums",
         tone === "bolt"
-          ? "bg-bolt text-primary-foreground"
+          ? "bg-bolt-fill text-primary-foreground"
           : "bg-ink text-paper"
       )}
     >

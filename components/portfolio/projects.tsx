@@ -5,7 +5,7 @@ import { BuildStep, SectionHead } from "./step"
 
 export function Projects() {
   return (
-    <section id="projects" aria-labelledby="projects-heading" className="scroll-mt-16">
+    <section id="projects" aria-labelledby="projects-heading" className="scroll-mt-24">
       <SectionHead
         id="projects"
         n="02"

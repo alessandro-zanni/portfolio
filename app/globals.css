@@ -18,6 +18,7 @@
     --color-ink-soft: var(--ink-soft);
     --color-brick: var(--brick);
     --color-bolt: var(--bolt);
+    --color-bolt-fill: var(--bolt-fill);
     --color-stud: var(--stud);
     --color-plate: var(--plate);
 
@@ -55,6 +56,8 @@
     --ink-soft: #2a4658;
     --brick: #e02b26;
     --bolt: #0f6fc4;
+    /* Fill behind white text — must clear 4.5:1 with #fff. Same as --bolt in light. */
+    --bolt-fill: #0f6fc4;
     --stud: #f5c000;
     --plate: #d7dbde;
 
@@ -64,7 +67,7 @@
     --card-foreground: var(--ink);
     --popover: var(--paper);
     --popover-foreground: var(--ink);
-    --primary: var(--bolt);
+    --primary: var(--bolt-fill);
     --primary-foreground: #ffffff;
     --secondary: #ffffff;
     --secondary-foreground: var(--ink);
@@ -91,7 +94,10 @@
     --ink: #eef5fd;
     --ink-soft: #a6c6df;
     --brick: #ff6152;
-    --bolt: #2f86cf;
+    /* Link text on the blue-black paper — lightened to clear 4.5:1 (was #2f86cf, 3.7:1). */
+    --bolt: #5aa9e8;
+    /* Fill behind white text — darkened to clear 4.5:1 with #fff (5.4:1). */
+    --bolt-fill: #1f6cb0;
     --stud: #ffcf33;
     --plate: #5b7ba6;
 
@@ -101,7 +107,7 @@
     --card-foreground: var(--ink);
     --popover: var(--paper);
     --popover-foreground: var(--ink);
-    --primary: var(--bolt);
+    --primary: var(--bolt-fill);
     --primary-foreground: #ffffff;
     --secondary: var(--paper);
     --secondary-foreground: var(--ink);
@@ -171,12 +177,7 @@
   background-position: center top;
 }
 
-/* One authored motion: a new piece settling onto the stack */
-@keyframes piece-drop {
-  0%   { transform: translateY(-14px); opacity: 0; }
-  60%  { transform: translateY(2px); opacity: 1; }
-  100% { transform: translateY(0); opacity: 1; }
-}
+/* One authored motion: a new piece settling onto the stack (see .reveal-piece) */
 @keyframes press-set {
   0%   { transform: scale(1.03); opacity: 0; }
   100% { transform: scale(1); opacity: 1; }
