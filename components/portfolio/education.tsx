@@ -2,7 +2,7 @@ import { education, languages } from "@/lib/resume"
 
 export function Education() {
   return (
-    <section aria-labelledby="education-heading" className="scroll-mt-16">
+    <section aria-labelledby="education-heading" className="scroll-mt-24">
       <h2
         id="education-heading"
         className="border-b-2 border-ink pb-3 font-display text-lg tracking-tight text-ink uppercase"

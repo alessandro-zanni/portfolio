@@ -26,7 +26,7 @@ function ThemeToggle() {
     <button
       type="button"
       onClick={() => setTheme(next)}
-      className="grid size-8 place-items-center border-2 border-ink bg-paper text-ink"
+      className="grid size-11 shrink-0 place-items-center border-2 border-ink bg-paper text-ink"
       aria-label={mounted ? `Switch to ${next} mode` : "Toggle colour mode"}
     >
       {mounted && resolvedTheme === "dark" ? (
@@ -67,7 +67,7 @@ export function StepTracker() {
       >
         <a
           href="#top"
-          className="flex shrink-0 items-center gap-2 font-display text-sm tracking-tight text-ink uppercase"
+          className="flex min-h-11 shrink-0 items-center gap-2 font-display text-sm tracking-tight text-ink uppercase"
         >
           <span
             aria-hidden="true"
@@ -83,7 +83,7 @@ export function StepTracker() {
           <span className="hidden sm:inline">A. Zanni</span>
         </a>
 
-        <ol className="flex min-w-0 flex-1 items-center justify-end gap-1 overflow-x-auto sm:gap-2">
+        <ol className="flex min-w-0 flex-1 items-center justify-end gap-1.5 overflow-x-auto sm:gap-2">
           {steps.map((step) => {
             const on = active === step.id
             return (
@@ -92,8 +92,8 @@ export function StepTracker() {
                   href={`#${step.id}`}
                   aria-current={on ? "true" : undefined}
                   className={cn(
-                    "flex items-center gap-1.5 border-2 border-ink px-2 py-1 text-xs font-semibold tracking-tight transition-colors",
-                    on ? "bg-bolt text-primary-foreground" : "bg-paper text-ink hover:bg-muted"
+                    "flex min-h-11 items-center gap-1.5 border-2 border-ink px-2.5 text-xs font-semibold tracking-tight transition-colors",
+                    on ? "bg-bolt-fill text-primary-foreground" : "bg-paper text-ink hover:bg-muted"
                   )}
                 >
                   <span className="font-mono text-[0.7rem] opacity-70">{step.n}</span>

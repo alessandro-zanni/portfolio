@@ -10,19 +10,22 @@ const email = links.find((l) => l.label === "email")!
 /** The four things Alessandro is known for — a strip directly under the nav. */
 export function Marks() {
   return (
-    <div className="border-b-2 border-ink bg-paper">
+    <section
+      aria-label="What Alessandro is known for"
+      className="border-b-2 border-ink bg-paper"
+    >
       <ul className="mx-auto grid max-w-5xl gap-x-6 gap-y-4 px-5 py-4 sm:grid-cols-2 sm:px-8 lg:grid-cols-4">
         {marks.map((mark) => (
           <li key={mark.title} className="flex gap-3">
             <Brick tone="brick" className="mt-0.5 size-6 shrink-0" />
             <div>
               <p className="text-sm font-bold tracking-tight text-ink">{mark.title}</p>
-              <p className="mt-0.5 text-[0.8rem] leading-snug text-ink-soft">{mark.note}</p>
+              <p className="mt-0.5 text-xs leading-snug text-ink-soft">{mark.note}</p>
             </div>
           </li>
         ))}
       </ul>
-    </div>
+    </section>
   )
 }
 
@@ -32,7 +35,7 @@ export function Masthead() {
       <div className="mx-auto max-w-5xl px-5 pt-12 pb-8 sm:px-8 sm:pt-16 sm:pb-10">
         <div className="grid gap-x-12 gap-y-8 lg:grid-cols-[1fr_17rem]">
           <div className="min-w-0">
-            <h1 className="animate-press-set font-display text-[clamp(2.6rem,7.4vw,4.75rem)] leading-[0.9] tracking-[-0.035em] text-ink uppercase">
+            <h1 className="animate-press-set font-display text-[clamp(2.35rem,7.4vw,4.75rem)] leading-[0.9] tracking-[-0.035em] text-ink uppercase">
               Alessandro
               <br />
               Zanni

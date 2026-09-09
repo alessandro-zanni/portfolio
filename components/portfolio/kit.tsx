@@ -42,7 +42,7 @@ export function ActionLink({
       className={cn(
         "inline-flex items-center gap-2 border-2 border-ink px-4 py-2.5 text-sm font-semibold tracking-tight uppercase transition-transform active:translate-y-0.5",
         variant === "primary"
-          ? "bg-bolt text-primary-foreground"
+          ? "bg-bolt-fill text-primary-foreground"
           : "bg-paper text-ink hover:bg-muted",
         className
       )}
