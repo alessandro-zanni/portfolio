@@ -1,0 +1,24 @@
+## The brief
+
+A distributor of electrical materials ran offers, quotations, and client
+follow-up out of spreadsheets and phone calls. The sales team needed one
+place to build an offer, track its status, and see a client's history
+without waiting on someone else to update a file.
+
+## What it does
+
+- Client and offer management: create a quotation, attach line items, track
+  status from draft to sent to accepted
+- Authentication and per-user permissions, so the sales team works
+  concurrently without stepping on each other's changes
+- Real-time data sync — an offer updated by one user is current for everyone
+  else immediately, no refresh required
+
+## How it's built
+
+Next.js on the frontend, a Node.js API, and Supabase/PostgreSQL for the data
+layer and realtime subscriptions. Deployed to Vercel with zero-downtime
+releases, so a new version ships without interrupting the sales team mid-day.
+
+The client asked for the company name and the live URL to stay off the
+public portfolio — this page respects that.

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000">
+  <defs>
+    <pattern id="grid" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#7cc4ef" opacity="0.45" />
+    </pattern>
+  </defs>
+  <rect width="1600" height="1000" fill="#a9dffb" />
+  <rect width="1600" height="1000" fill="url(#grid)" />
+
+  <!-- signature brick mark -->
+  <g transform="translate(1370,60) scale(1.5)">
+    <path d="M9 33 L50 54 L50 88 L9 67 Z" fill="#a81f1b" stroke="#10100f" stroke-width="3" stroke-linejoin="round" />
+    <path d="M91 33 L50 54 L50 88 L91 67 Z" fill="#e02b26" stroke="#10100f" stroke-width="3" stroke-linejoin="round" />
+    <path d="M50 12 L91 33 L50 54 L9 33 Z" fill="#ec6a63" stroke="#10100f" stroke-width="3" stroke-linejoin="round" />
+    <ellipse cx="34" cy="27" rx="7" ry="4" fill="#ec6a63" />
+    <ellipse cx="52" cy="18" rx="7" ry="4" fill="#ec6a63" />
+    <ellipse cx="48" cy="39" rx="7" ry="4" fill="#ec6a63" />
+    <ellipse cx="66" cy="30" rx="7" ry="4" fill="#ec6a63" />
+  </g>
+
+  <!-- stacked offer sheets -->
+  <g transform="translate(560,220)">
+    <rect x="40" y="30" width="380" height="480" fill="#d7dbde" stroke="#10100f" stroke-width="6" />
+    <rect x="0" y="0" width="380" height="480" fill="#ffffff" stroke="#10100f" stroke-width="6" />
+    <rect x="40" y="46" width="220" height="18" fill="#10100f" />
+    <rect x="40" y="96" width="300" height="10" fill="#a6adb3" />
+    <rect x="40" y="126" width="300" height="10" fill="#a6adb3" />
+    <rect x="40" y="156" width="300" height="10" fill="#a6adb3" />
+    <rect x="40" y="186" width="220" height="10" fill="#a6adb3" />
+    <rect x="40" y="390" width="150" height="16" fill="#10100f" />
+    <rect x="40" y="424" width="300" height="34" fill="#0f6fc4" />
+
+    <!-- approved badge -->
+    <g transform="translate(300,-40)">
+      <rect x="0" y="0" width="90" height="90" fill="#f5c000" stroke="#10100f" stroke-width="6" />
+      <path d="M20 46 L38 64 L72 24" fill="none" stroke="#10100f" stroke-width="8" stroke-linecap="square" stroke-linejoin="miter" />
+    </g>
+  </g>
+</svg>

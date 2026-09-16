@@ -1,0 +1,27 @@
+## The brief
+
+Own photo storage and Mac backups instead of paying for iCloud/Google Photos
+at scale, on hardware already sitting around — an old i7 desktop repurposed
+into a always-on home server.
+
+## What it runs
+
+- **Immich** for photo/video storage, with **Time Machine** backups over
+  Samba for the Macs on the network
+- Storage unified across 7 HDDs with **mergerfs**, with **SnapRAID** parity
+  on a dedicated disk so a single drive failure doesn't cost the pool
+- **Borg Backup** nightly, deduplicated and compressed — local, plus offsite
+  to **Backblaze B2** via rclone, the 3-2-1 rule applied literally
+- **Tailscale** for remote access over WireGuard, **Cloudflare Tunnel** for
+  the parts that need to be public — no ports opened on the router either way
+- A media stack (Jellyfin, the *arr suite) behind its own VPN container, plus
+  Uptime Kuma, smartd disk-health checks, and a Telegram bot for alerts and
+  remote commands
+
+## Status
+
+Actively maintained, not a one-off setup-and-forget box: disaster-recovery
+restores are tested, not assumed, and the stack keeps picking up new
+services (a UPS integration is next, waiting on a cable). Documented well
+enough that a full rebuild from a bare Ubuntu install is a runbook, not a
+guess.

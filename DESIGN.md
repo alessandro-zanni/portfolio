@@ -1,6 +1,6 @@
 ---
 name: Alessandro Zanni Portfolio
-description: A one-page CV built as a brick build-instruction booklet — the reader assembles an understanding of one engineer step by step.
+description: A CV built as a brick build-instruction booklet — the reader assembles an understanding of one engineer step by step, with dedicated project pages as expansion sheets to the same set.
 colors:
   blueprint: "#a9dffb"
   blueprint-line: "#7cc4ef"
@@ -264,6 +264,28 @@ Sticky top bar, blueprint-at-95% over blur, 2px ink base rule. Left: a wordmark 
 - **`prefers-reduced-motion`**: all animation and transition durations are forced to `0.001ms` globally.
 
 **The One Motion Rule.** The page has a single authored motion — a piece settling into place. The assembly stack does not animate; nothing loops; nothing moves on hover. If it moves, it is a piece arriving, once.
+
+## Extending the world: project pages
+
+`/projects` (index) and `/projects/[slug]` (detail) are expansion sheets, not a
+different site — the same rules apply, just at a second altitude.
+
+- **Header:** a "back" link (bolt, `ArrowLeft`) replaces the sticky step nav —
+  these pages are a branch off the main build, not another step in it.
+  Title in display uppercase; status (`shipped` / `in progress`) as a
+  `PieceTag`, period in mono, next to it.
+- **Cover art:** every project gets a `Plate`-framed cover image, 16:9 (detail)
+  or 16:10 (index card). Where no live screenshot exists to show honestly
+  (private client work, a UI-less tool), the cover is drawn in-system — flat
+  ink-stroke icons on the blueprint grid, plus the isometric brick mark as a
+  signature — never a fabricated product photo.
+- **Body copy:** case-study prose runs through the same primitives as a build
+  step — `##`/`###` in display uppercase, bolt-square bullets, `64ch` measure
+  — via the MDX component map in `mdx-components.tsx`, so a `.mdx` file reads
+  as part of the instruction booklet, not a generic blog post.
+- **Links out:** repo (`ActionLink` secondary, GitHub glyph) and live demo
+  (`ActionLink` primary) sit under a 2px ink rule beneath the header, same as
+  the masthead's email/CV row.
 
 ## Do's and Don'ts
 
