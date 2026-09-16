@@ -16,15 +16,6 @@ export type Job = {
   compact?: boolean
 }
 
-export type Project = {
-  title: string
-  /** Short label for the 1:1 call-out box. */
-  piece: string
-  subtitle: string
-  bullets: string[]
-  stack?: string[]
-}
-
 export type Link = {
   label: string
   href: string
@@ -166,44 +157,6 @@ export const experience: Job[] = [
     bullets: [
       "Vector graphics and image retouching in Adobe Creative Suite; print production and large-format installation",
     ],
-  },
-]
-
-export const projects: Project[] = [
-  {
-    title: "CRM Platform for Electrical Materials Distributor",
-    piece: "B2B sales-operations platform",
-    subtitle:
-      "Custom business management system for offer and client management (B2B sales operations platform)",
-    bullets: [
-      "Built a modern web application enabling the sales team to manage client offers, quotations, and business workflows",
-      "Full-stack development spanning responsive frontend (Next.js), backend APIs, and database architecture",
-      "Integrated authentication and real-time data synchronization for concurrent user operations",
-      "Deployed to production on Vercel with zero-downtime deployments",
-    ],
-    stack: ["Next.js", "React", "Node.js", "Supabase", "PostgreSQL", "Vercel", "TypeScript"],
-  },
-  {
-    title: "Freelance Web Solutions",
-    piece: "Client sites, end to end",
-    subtitle: "Responsive corporate and portfolio websites for multiple B2B and B2C clients",
-    bullets: [
-      "3+ production websites with custom integrations and SEO optimization",
-      "Focus on responsive design, performance, and user experience",
-    ],
-    stack: ["HTML5", "CSS3", "JavaScript", "various backend frameworks"],
-  },
-  {
-    title: "Infrastructure & Self-Hosting",
-    piece: "DevOps & self-hosted infra",
-    subtitle: "Self-hosted solutions and DevOps infrastructure for personal projects and client systems",
-    bullets: [
-      "Docker containerization and orchestration for microservices and development environments",
-      "Linux/Ubuntu server administration, system management, and deployment automation",
-      "Self-hosted infrastructure setup and maintenance (monitoring, backups, security)",
-      "CI/CD pipeline configuration and automated deployment workflows",
-    ],
-    stack: ["Docker", "Docker Compose", "Linux/Ubuntu", "CI/CD", "deployment automation"],
   },
 ]
 

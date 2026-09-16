@@ -39,8 +39,8 @@ Breadth is deliberate and evidenced: employee and freelance, frontend and backen
 
 ## Capabilities and Constraints
 
-- **Scope:** single page, English only, static deploy — no contact form, no backend, no CMS. Content lives in `lib/resume.ts` as the single source of truth.
-- **Content sections:** profile/pitch, professional experience (5 roles), freelance projects (3, description-only — no live links or screenshots), education, technical skills, languages, contact links, downloadable CV PDF.
+- **Scope:** English only, static deploy — no contact form, no backend, no runtime CMS. The CV lives on one page (`/`); each project also gets its own page (`/projects`, `/projects/[slug]`) for a fuller case study. Content lives in typed/plain files, not a database: CV data in `lib/resume.ts`, project index metadata in `lib/projects.ts`, per-project long-form write-ups as committed MDX files in `content/projects/`.
+- **Content sections:** profile/pitch, professional experience (5 roles), a projects index (shipped and in-progress, client and personal work) with a dedicated page per project — links (repo/demo) and screenshots where a project has something public to show; anonymized and description-only where it doesn't (client confidentiality) — education, technical skills, languages, contact links, downloadable CV PDF.
 - **Stack** (set by the existing codebase, not open): Next.js 16 (App Router), React 19, Tailwind v4, shadcn/ui, next-themes. Light/dark themes; `d` toggles.
 - **Undecided / open:**
   - Final deploy domain — `metadataBase` and the GitHub URL in the code are placeholders awaiting real values.
@@ -59,7 +59,7 @@ Breadth is deliberate and evidenced: employee and freelance, frontend and backen
 - `public/alessandro-zanni-cv.pdf` — the current CV, full employment and project history, verbatim source for all site copy.
 - `lib/resume.ts` — the same content structured.
 - Named employers and clients from the CV: Heres, SpotView, ICT-GROUP, Studio il Granello, Graffo; retail clients Tigotà and Pinalli; a freelance CRM for an (unnamed) electrical-materials distributor.
-- **Not available — do not fabricate:** company logos or permission to use them, testimonials or references, project screenshots or live URLs, quantified impact metrics (revenue, latency, user counts), GitHub activity, employment dates beyond those in the CV, any Italian-language copy.
+- **Not available — do not fabricate:** company logos or permission to use them, testimonials or references, client names or client-owned URLs beyond what the CV already discloses, quantified impact metrics (revenue, latency, user counts), employment dates beyond those in the CV, any Italian-language copy. Screenshots and live/repo links are fine for projects that have a public artifact to show (personal/open-source projects, or a client project the client has agreed to feature) — never for a private client system without their say-so, and never authenticated/logged-in views that would expose someone's real data.
 
 ## Product Principles
 

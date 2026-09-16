@@ -1,0 +1,30 @@
+## Why it exists
+
+The only Kodi addon for Immich was unmaintained and broke on every Immich
+release that added a new field to its API responses. Rather than patch it,
+this is a rewrite from scratch around the two decisions that caused most of
+its bug reports.
+
+## What it does
+
+Timeline, videos, albums, favourites, people, places, tags, memories,
+folders, shared-with-me, Immich's own CLIP smart search, random, archive —
+browsing and playback for a whole Immich library from the Kodi UI on a TV.
+
+## The two rules that keep it working
+
+- **The Immich API is never modelled.** The old addon mapped API responses
+  onto dataclasses, so any new field crashed every listing — over half its
+  closed issues trace back to that. Here, an unknown field is ignored and a
+  missing one reads as `None`.
+- **One request per screen.** Immich's own timeline-bucket endpoint already
+  returns everything a listing needs. The old addon fetched each asset
+  individually — a 500-photo month meant 501 requests, which is why its
+  slideshow never finished on a large library.
+
+## How it's built
+
+Python, stdlib only — no runtime dependencies to resolve at install time on
+a device where that matters. Unit tests run without Kodi installed via a
+stub of the `xbmc*` modules, plus a smoke-test script that exercises every
+view against a real server before a release ships.
