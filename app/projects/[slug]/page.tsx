@@ -11,7 +11,7 @@ import { ActionLink, PieceTag, Plate } from "@/components/portfolio/kit"
 import { StackTags } from "@/components/portfolio/stack-tags"
 import { profile } from "@/lib/resume"
 import { getProject, projects } from "@/lib/projects"
-import { mdxComponents } from "@/mdx-components"
+import { mdxComponents, remarkUnwrapImages } from "@/mdx-components"
 
 export function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }))
@@ -44,6 +44,7 @@ export default async function ProjectPage({
   const { content } = await compileMDX({
     source,
     components: mdxComponents(),
+    options: { mdxOptions: { remarkPlugins: [remarkUnwrapImages] } },
   })
 
   return (

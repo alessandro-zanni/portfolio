@@ -14,7 +14,7 @@ export type ProjectMeta = {
   period: string
   stack?: string[]
   links?: { repo?: string; demo?: string }
-  /** public/projects/<slug>/cover.(svg|png) */
+  /** public/projects/<slug>/cover.(svg|jpg) */
   cover: string
   /** Short teaser bullets for the homepage build step. */
   bullets: string[]
@@ -30,7 +30,7 @@ export const projects: ProjectMeta[] = [
     status: "shipped",
     period: "2025",
     stack: ["Next.js", "React", "Node.js", "Supabase", "PostgreSQL", "Vercel", "TypeScript"],
-    cover: "/projects/crm-platform/cover.svg",
+    cover: "/projects/crm-platform/cover.jpg",
     bullets: [
       "Built a modern web application enabling the sales team to manage client offers, quotations, and business workflows",
       "Full-stack development spanning responsive frontend (Next.js), backend APIs, and database architecture",
@@ -46,7 +46,7 @@ export const projects: ProjectMeta[] = [
     status: "shipped",
     period: "2023 – 2026",
     stack: ["HTML5", "CSS3", "JavaScript", "Astro", "Next.js", "various backend frameworks"],
-    cover: "/projects/freelance-web-solutions/cover.svg",
+    cover: "/projects/freelance-web-solutions/cover.jpg",
     bullets: [
       "Multiple production websites with custom integrations and SEO optimization",
       "Focus on responsive design, performance, and user experience",
@@ -105,7 +105,7 @@ export const projects: ProjectMeta[] = [
     period: "2026 – present",
     stack: ["Next.js", "TypeScript"],
     links: { demo: "https://bodytrack.it" },
-    cover: "/projects/traccia/cover.svg",
+    cover: "/projects/traccia/cover.jpg",
     bullets: [
       "A shared daily log between a client and their coach — training, meals, notes — in one place",
       "Built as a Next.js PWA, installable on a phone home screen",
@@ -120,7 +120,7 @@ export const projects: ProjectMeta[] = [
     status: "in-progress",
     period: "2026 – present",
     stack: ["Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui", "Supabase", "Vercel"],
-    cover: "/projects/scouty/cover.svg",
+    cover: "/projects/scouty/cover.jpg",
     bullets: [
       "Mobile-first observation forms: scouts score players across eight common axes plus role-specific detail, right from the field",
       "Player profiles with a radar chart, cross-role score composition, and ranking always scoped to a role and category",
