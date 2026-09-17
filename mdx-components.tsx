@@ -3,6 +3,30 @@ import Image from "next/image"
 
 import { Plate } from "@/components/portfolio/kit"
 
+type MdastNode = { type: string; children?: MdastNode[] }
+
+/**
+ * A standalone `![alt](src)` line is parsed as a paragraph wrapping a single
+ * image node — remark's normal behavior. Our `img` override renders a
+ * `Plate` (a `div`), and a `div` inside a `p` is invalid HTML and breaks
+ * hydration, so lift that image out of its paragraph before rendering.
+ */
+export function remarkUnwrapImages() {
+  return (tree: MdastNode) => {
+    function visit(node: MdastNode) {
+      if (!node.children) return
+      node.children = node.children.flatMap((child) => {
+        if (child.type === "paragraph" && child.children?.length === 1 && child.children[0].type === "image") {
+          return child.children[0]
+        }
+        visit(child)
+        return child
+      })
+    }
+    visit(tree)
+  }
+}
+
 /**
  * Renders MDX case-study bodies through the "Exploded Assembly" world instead
  * of bare HTML — same headings, keylines, and bullet language as the rest of
