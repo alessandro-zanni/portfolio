@@ -1,0 +1,36 @@
+## The brief
+
+A youth football academy ran player scouting on paper and scattered
+spreadsheets. Observers filled in evaluation sheets from the sidelines;
+staff needed to search, compare, and rank the players being watched from
+one place, not from whoever had the latest file.
+
+## What it does
+
+- Mobile-first observation forms: scouts score players across eight common
+  axes plus role-specific detail, straight from the field
+- Player profiles with a radar chart built from weighted scores across
+  every report, and cross-role score composition when a player has been
+  watched in more than one position
+- Ranking always scoped to a role and category — never an absolute list —
+  and side-by-side comparison of up to three players
+- Duplicate detection on player creation, admin tools for merging records,
+  and time-boxed observer weights so a scout's track record feeds the
+  ranking
+
+## How it's built
+
+Next.js 16 App Router with TypeScript, Tailwind v4 and shadcn/ui on
+`@base-ui/react` for the interface. Supabase backs a multi-tenant Postgres
+schema secured with row-level security, with roles separating scouts from
+managers and admins. Deployed to Vercel with separate production and
+staging environments through GitHub Actions.
+
+## Status
+
+In production use with a real academy, including a one-time import of
+their historical paper archive into the same schema. Still under active
+development.
+
+The project handles a real club's data, including minors, so the
+repository and any live URL stay off the public portfolio.

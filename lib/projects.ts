@@ -112,6 +112,22 @@ export const projects: ProjectMeta[] = [
       "In active development",
     ],
   },
+  {
+    slug: "scouty",
+    title: "Scouty",
+    piece: "Youth football scouting platform",
+    subtitle: "Field evaluation and player ranking system for a youth football academy",
+    status: "in-progress",
+    period: "2026 – present",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui", "Supabase", "Vercel"],
+    cover: "/projects/scouty/cover.svg",
+    bullets: [
+      "Mobile-first observation forms: scouts score players across eight common axes plus role-specific detail, right from the field",
+      "Player profiles with a radar chart, cross-role score composition, and ranking always scoped to a role and category",
+      "Multi-tenant Postgres schema with row-level security, roles for scouts vs. managers, and an audit trail for weight and merge decisions",
+      "Imported a club's historical paper/spreadsheet archive (700+ past evaluations) into the same schema without touching live data",
+    ],
+  },
 ]
 
 export function getProject(slug: string) {
