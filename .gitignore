@@ -38,3 +38,6 @@ next-env.d.ts
 # impeccable QA scratch (design-system records under .impeccable/ are kept)
 /.impeccable/review/
 /.impeccable/questions/
+
+# SonarQube scanner
+/.scannerwork
