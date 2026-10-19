@@ -24,9 +24,18 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const project = getProject((await params).slug)
   if (!project) return {}
+  const url = `/projects/${project.slug}`
   return {
-    title: `${project.title} — ${profile.name}`,
+    title: project.title,
     description: project.subtitle,
+    alternates: { canonical: url },
+    openGraph: {
+      type: "article",
+      url,
+      title: project.title,
+      description: project.subtitle,
+      siteName: `${profile.name} — ${profile.title}`,
+    },
   }
 }
 

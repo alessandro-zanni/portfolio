@@ -4,6 +4,7 @@ import { Archivo, Archivo_Black, Geist_Mono } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { profile } from "@/lib/resume"
+import { siteUrl } from "@/lib/site"
 import { cn } from "@/lib/utils"
 
 const archivo = Archivo({
@@ -26,17 +27,15 @@ const geistMono = Geist_Mono({
 
 const title = `${profile.name} — ${profile.title}`
 
-// Set NEXT_PUBLIC_SITE_URL at deploy to the real domain; the fallback only
-// affects absolute URLs in OG/Twitter tags.
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.alessandrozanni.dev"
-
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title,
+  title: { default: title, template: `%s — ${profile.name}` },
   description: profile.pitch,
+  alternates: { canonical: "/" },
   authors: [{ name: profile.name }],
   openGraph: {
     type: "website",
+    url: "/",
     title,
     description: profile.pitch,
     siteName: title,
