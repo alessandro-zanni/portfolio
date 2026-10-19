@@ -11,6 +11,13 @@ export function Colophon() {
         </p>
         <p className="mt-4 font-mono text-xs text-ink-soft">
           © {new Date().getFullYear()} Alessandro Zanni · Next.js · self-hosted
+          ·{" "}
+          <a
+            href="/privacy"
+            className="underline underline-offset-2 hover:text-ink"
+          >
+            Privacy
+          </a>
         </p>
       </div>
     </footer>
