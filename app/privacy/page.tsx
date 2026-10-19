@@ -26,7 +26,7 @@ const sections: { title: string; body: string }[] = [
   },
   {
     title: "When you contact me",
-    body: "If you email or call me, I use your details only to reply and to follow up on what you asked, and I delete them when they are no longer needed for that.",
+    body: "If you email me, I use your details only to reply and to follow up on what you asked, and I delete them when they are no longer needed for that.",
   },
   {
     title: "Where the data goes",

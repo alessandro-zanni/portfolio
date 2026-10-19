@@ -1,7 +1,6 @@
 import { ArrowRight } from "lucide-react"
 
 import { links, profile } from "@/lib/resume"
-import { cn } from "@/lib/utils"
 
 import { Brick } from "./brick"
 import { ActionLink, Plate } from "./kit"
@@ -13,12 +12,6 @@ const rest = links.filter((l) => l.label !== "email")
 const contactRows = [
   { label: "email", href: email.href, handle: profile.email, blank: false },
   ...rest.map((l) => ({ label: l.label, href: l.href, handle: l.handle, blank: true })),
-  {
-    label: "phone",
-    href: `tel:${profile.phone.replace(/\s/g, "")}`,
-    handle: profile.phone,
-    blank: false,
-  },
 ]
 
 export function Contact() {
@@ -55,10 +48,7 @@ export function Contact() {
                   href={row.href}
                   target={row.blank ? "_blank" : undefined}
                   rel={row.blank ? "noreferrer" : undefined}
-                  className={cn(
-                    "font-medium text-bolt underline-offset-4 hover:underline",
-                    row.label === "phone" && "font-mono"
-                  )}
+                  className="font-medium text-bolt underline-offset-4 hover:underline"
                 >
                   {row.handle}
                 </a>

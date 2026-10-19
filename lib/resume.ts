@@ -30,7 +30,6 @@ export const profile = {
   subtitle: "AI & Conversational Systems Specialist",
   location: "Barcelona, Spain",
   email: "azanni098@gmail.com",
-  phone: "[phone removed]",
   /** The one plain-English line a skimmer must get. */
   lead: "Full-stack engineer who builds production conversational-AI systems and owns the stack end to end — Postgres to self-hosted infra. Trained as a designer.",
   pitch:
