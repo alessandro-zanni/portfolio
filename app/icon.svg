@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <!-- The signature 2×2 brick (components/portfolio/brick.tsx) on the blueprint ground. -->
+  <rect width="512" height="512" rx="96" fill="#a9dffb"/>
+  <g transform="translate(56 56) scale(4)" stroke="#10100f" stroke-width="3" stroke-linejoin="round">
+    <path d="M9 33 L50 54 L50 88 L9 67 Z" fill="#af221e"/>
+    <path d="M91 33 L50 54 L50 88 L91 67 Z" fill="#e02b26"/>
+    <path d="M50 12 L91 33 L50 54 L9 33 Z" fill="#e44440"/>
+    <ellipse cx="34" cy="27" rx="7" ry="4" fill="#e44440"/>
+    <ellipse cx="52" cy="18" rx="7" ry="4" fill="#e44440"/>
+    <ellipse cx="48" cy="39" rx="7" ry="4" fill="#e44440"/>
+    <ellipse cx="66" cy="30" rx="7" ry="4" fill="#e44440"/>
+  </g>
+</svg>
