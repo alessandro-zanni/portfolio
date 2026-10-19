@@ -64,11 +64,11 @@ wordless arrows, a stack that grows one brick per role.
 
 STORY: The visitor sees someone who owns whole products and ships production
 conversational AI; believes the range is real because each step visibly clicks
-another piece onto the stack; emails him or downloads the CV.
+another piece onto the stack; emails him or opens his LinkedIn.
 
 FIRST VIEWPORT: No hero card. A set-box masthead — "ALESSANDRO ZANNI" as the
 set name in heavy grotesque on gridded blue; one plain-English lead line; a
-"pieces in this set" spec panel; email (bolt, filled) and download CV (white,
+"pieces in this set" spec panel; email (bolt, filled) and LinkedIn (white,
 keyline) on one printed rule; the numbered step-tracker nav directly below.
 
 FORM: "Brick build-instruction booklet" — catalog challenger, won the roll on

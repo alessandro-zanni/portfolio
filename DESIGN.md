@@ -224,7 +224,7 @@ A link drawn as an instruction-booklet button.
 - **Shape:** hard square, `border-2 border-ink`, padding `10px 16px` (`px-4 py-2.5`).
 - **Type:** `text-sm font-semibold uppercase tracking-tight`.
 - **Primary:** `bg-bolt` fill, `#ffffff` text. Used for "Email Alessandro" (masthead and contact).
-- **Secondary:** `bg-paper`, `text-ink`, keyline only; hover fills `bg-muted`. Used for "Download CV".
+- **Secondary:** `bg-paper`, `text-ink`, keyline only; hover fills `bg-muted`. Used for the masthead's LinkedIn link.
 - **Interaction:** `transition-transform`, `active:translate-y-0.5` — a physical press-down. No hover lift, no colour shift on primary.
 
 ### Nav step chips — `StepTracker`
@@ -285,7 +285,7 @@ different site — the same rules apply, just at a second altitude.
   as part of the instruction booklet, not a generic blog post.
 - **Links out:** repo (`ActionLink` secondary, GitHub glyph) and live demo
   (`ActionLink` primary) sit under a 2px ink rule beneath the header, same as
-  the masthead's email/CV row.
+  the masthead's email/LinkedIn row.
 
 ## Do's and Don'ts
 

@@ -122,8 +122,8 @@
       "name": "Action Link — Secondary",
       "kind": "button",
       "refersTo": "action-link-secondary",
-      "description": "The keyline-only button. Used for 'Download CV'.",
-      "html": "<a class=\"ds-action-secondary\" href=\"#\" download><svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 3v12M7 11l5 5 5-5M5 21h14\"/></svg>Download CV</a>",
+      "description": "The keyline-only button. Used for the masthead's LinkedIn link.",
+      "html": "<a class=\"ds-action-secondary\" href=\"#\" download><svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 17L17 7M8 7h9v9\"/></svg>LinkedIn</a>",
       "css": ".ds-action-secondary { display: inline-flex; align-items: center; gap: 0.5rem; border: 2px solid var(--ink, #10100f); background: #fff; color: var(--ink, #10100f); padding: 0.625rem 1rem; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: -0.01em; text-decoration: none; border-radius: 0; transition: transform 0.12s ease, background 0.12s ease; } .ds-action-secondary:hover { background: var(--muted, #cbe9fb); } .ds-action-secondary:active { transform: translateY(0.125rem); } .ds-action-secondary:focus-visible { outline: 3px solid var(--bolt, #0f6fc4); outline-offset: 2px; }"
     },
     {

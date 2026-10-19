@@ -1,4 +1,4 @@
-import { ArrowRight, Download } from "lucide-react"
+import { ArrowRight, ArrowUpRight } from "lucide-react"
 
 import { links, marks, profile, spec } from "@/lib/resume"
 
@@ -6,6 +6,7 @@ import { Brick } from "./brick"
 import { ActionLink, Plate } from "./kit"
 
 const email = links.find((l) => l.label === "email")!
+const linkedin = links.find((l) => l.label === "linkedin")!
 
 /** The four things Alessandro is known for — a strip directly under the nav. */
 export function Marks() {
@@ -50,9 +51,14 @@ export function Masthead() {
                 Email Alessandro
                 <ArrowRight className="size-4" aria-hidden="true" />
               </ActionLink>
-              <ActionLink href={profile.cv} download variant="secondary">
-                <Download className="size-4" aria-hidden="true" />
-                Download CV
+              <ActionLink
+                href={linkedin.href}
+                target="_blank"
+                rel="noreferrer"
+                variant="secondary"
+              >
+                LinkedIn
+                <ArrowUpRight className="size-4" aria-hidden="true" />
               </ActionLink>
             </div>
           </div>

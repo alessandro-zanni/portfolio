@@ -34,7 +34,6 @@ export const profile = {
   lead: "Full-stack engineer who builds production conversational-AI systems and owns the stack end to end — Postgres to self-hosted infra. Trained as a designer.",
   pitch:
     "Full Stack Software Engineer with 6+ years across web development and AI-powered systems. Currently at Heres, specializing in Generative AI and LLM integrations — designing conversational AI architectures, managing multi-channel chatbot platforms, and building scalable backend systems. Expert in React, Node.js, TypeScript, and cloud infrastructure (AWS, PostgreSQL). Comfortable moving between deep system design and cross-functional collaboration with product and non-technical stakeholders.",
-  cv: "/alessandro-zanni-cv.pdf",
 }
 
 /** "Pieces in this set" — the quick spec panel on the masthead. */

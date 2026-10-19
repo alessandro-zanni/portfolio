@@ -19,7 +19,7 @@ Context of use: reached from a LinkedIn profile, a job application, a referral, 
 
 ## Product Purpose
 
-A personal portfolio / online CV for Alessandro Zanni. It presents the content of his CV (`public/alessandro-zanni-cv.pdf`, source `~/Documents/CV/CV-2026-07-20-EN.pdf`) as a self-hosted web page he controls, links from his professional profiles, and updates independently of the PDF. Success = a qualified visitor forms an accurate picture of his level and range and contacts him (email, LinkedIn), or downloads the CV to move him forward in a process.
+A personal portfolio / online CV for Alessandro Zanni. It presents the content of his CV (source `~/Documents/CV/CV-2026-07-20-EN.pdf`, not published: the PDF carries his phone number) as a self-hosted web page he controls, links from his professional profiles, and updates independently of the PDF. Success = a qualified visitor forms an accurate picture of his level and range and contacts him (email, LinkedIn) to move him forward in a process.
 
 ## Positioning
 
@@ -35,12 +35,12 @@ Breadth is deliberate and evidenced: employee and freelance, frontend and backen
 - 6+ years' experience; currently Software Engineer — Generative AI & LLM Integration at Heres s.r.l. (08/2021–present).
 - Based in Barcelona, Spain. Prior roles in Emilia-Romagna, Italy (Bologna, Reggio Emilia, Correggio). Open to the EU market and remote.
 - Italian native; English B2.
-- The visitor journey the site sits in: profile/application/referral → portfolio → email or LinkedIn reply, or CV download → internal process.
+- The visitor journey the site sits in: profile/application/referral → portfolio → email or LinkedIn reply → internal process.
 
 ## Capabilities and Constraints
 
 - **Scope:** English only, static deploy — no contact form, no backend, no runtime CMS. The CV lives on one page (`/`); each project also gets its own page (`/projects`, `/projects/[slug]`) for a fuller case study. Content lives in typed/plain files, not a database: CV data in `lib/resume.ts`, project index metadata in `lib/projects.ts`, per-project long-form write-ups as committed MDX files in `content/projects/`.
-- **Content sections:** profile/pitch, professional experience (5 roles), a projects index (shipped and in-progress, client and personal work) with a dedicated page per project — links (repo/demo) and screenshots where a project has something public to show; anonymized and description-only where it doesn't (client confidentiality) — education, technical skills, languages, contact links, downloadable CV PDF.
+- **Content sections:** profile/pitch, professional experience (5 roles), a projects index (shipped and in-progress, client and personal work) with a dedicated page per project — links (repo/demo) and screenshots where a project has something public to show; anonymized and description-only where it doesn't (client confidentiality) — education, technical skills, languages, contact links. No downloadable CV: the PDF is not published.
 - **Stack** (set by the existing codebase, not open): Next.js 16 (App Router), React 19, Tailwind v4, shadcn/ui, next-themes. Light/dark themes; `d` toggles.
 - **Undecided / open:**
   - Final deploy domain — `metadataBase` and the GitHub URL in the code are placeholders awaiting real values.
@@ -56,7 +56,7 @@ Breadth is deliberate and evidenced: employee and freelance, frontend and backen
 
 ## Evidence on Hand
 
-- `public/alessandro-zanni-cv.pdf` — the current CV, full employment and project history, verbatim source for all site copy.
+- `~/Documents/CV/CV-2026-07-20-EN.pdf` — the current CV (private, not in the repo), full employment and project history, verbatim source for all site copy.
 - `lib/resume.ts` — the same content structured.
 - Named employers and clients from the CV: Heres, SpotView, ICT-GROUP, Studio il Granello, Graffo; retail clients Tigotà and Pinalli; a freelance CRM for an (unnamed) electrical-materials distributor.
 - **Not available — do not fabricate:** company logos or permission to use them, testimonials or references, client names or client-owned URLs beyond what the CV already discloses, quantified impact metrics (revenue, latency, user counts), employment dates beyond those in the CV, any Italian-language copy. Screenshots and live/repo links are fine for projects that have a public artifact to show (personal/open-source projects, or a client project the client has agreed to feature) — never for a private client system without their say-so, and never authenticated/logged-in views that would expose someone's real data.
@@ -71,4 +71,4 @@ Breadth is deliberate and evidenced: employee and freelance, frontend and backen
 
 ## Accessibility & Inclusion
 
-No audience-specific standard established. Baseline: legible at mobile widths (primary reading context), real semantic structure and headings, both color themes meeting contrast, keyboard-navigable, and the CV PDF reachable as a plain link.
+No audience-specific standard established. Baseline: legible at mobile widths (primary reading context), real semantic structure and headings, both color themes meeting contrast, keyboard-navigable.

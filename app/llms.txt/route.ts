@@ -20,7 +20,6 @@ export function GET() {
     ),
     `## Contact`,
     ...links.map((link) => `- ${link.label}: ${link.href}`),
-    `- CV (PDF): ${siteUrl}${profile.cv}`,
   ].join("\n\n")
   return new Response(body + "\n", {
     headers: { "Content-Type": "text/plain; charset=utf-8" },
