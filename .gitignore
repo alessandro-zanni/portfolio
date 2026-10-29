@@ -41,3 +41,6 @@ next-env.d.ts
 
 # SonarQube scanner
 /.scannerwork
+
+# playwright mcp
+.playwright-mcp/
