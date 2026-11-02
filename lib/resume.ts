@@ -204,5 +204,5 @@ export const inventory: { bin: string; items: string[] }[] = [
 
 export const languages = [
   { name: "Italian", level: "Native" },
-  { name: "English", level: "B2" },
+  { name: "English", level: "B2/C1" },
 ]
