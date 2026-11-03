@@ -19,7 +19,7 @@ workflow: each project builds only its own branch through the ignore step
 | Branch    | Vercel project      | URL                                              | Protection                  |
 | --------- | ------------------- | ------------------------------------------------ | --------------------------- |
 | `main`    | `portfolio`         | www.alessandrozanni.dev (public)                 | Vercel login except domains |
-| `develop` | `portfolio-staging` | staging.alessandrozanni.dev, portfolio-staging.vercel.app | Vercel login on all deploys |
+| `develop` | `portfolio-staging` | staging.alessandrozanni.dev, portfolio-staging-eta.vercel.app | Vercel login on all deploys |
 
 DNS is on Cloudflare. CI (`.github/workflows/ci.yml`) runs lint and typecheck
 on `main`, `develop` and PRs. `VERCEL_TOKEN` lives in `.envrc` (direnv, not
