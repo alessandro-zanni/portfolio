@@ -1,4 +1,6 @@
 import type { Metadata } from "next"
+import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Archivo, Archivo_Black, Geist_Mono } from "next/font/google"
 
 import "./globals.css"
@@ -99,6 +101,8 @@ export default function RootLayout({
       <body>
         <div hidden dangerouslySetInnerHTML={{ __html: DIRECTION_CONTRACT }} />
         <ThemeProvider>{children}</ThemeProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
