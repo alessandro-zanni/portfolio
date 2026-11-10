@@ -6,12 +6,12 @@ import { profile } from "@/lib/resume"
 
 // DRAFT privacy notice (GDPR art. 13), written without legal review — check it
 // before relying on it. Keep it in step with what the site actually does: no
-// cookies, no analytics, hosting logs only.
+// cookies, hosting logs plus cookieless Vercel Web Analytics and Speed Insights.
 
 export const metadata: Metadata = {
   title: "Privacy",
   description:
-    "What this site collects about visitors: hosting logs only, no cookies, no analytics.",
+    "What this site collects about visitors: hosting logs and cookieless, aggregated usage statistics. No cookies.",
   alternates: { canonical: "/privacy" },
 }
 
@@ -22,7 +22,7 @@ const sections: { title: string; body: string }[] = [
   },
   {
     title: "What is collected",
-    body: "No cookies, no analytics, no tracking. The hosting provider (Vercel Inc.) keeps technical request logs — IP address, browser, page requested, time — for security and to keep the service running. Your light/dark preference is stored only in your own browser.",
+    body: "No cookies and no tracking across sites. The hosting provider (Vercel Inc.) keeps technical request logs — IP address, browser, page requested, time — for security and to keep the service running. Vercel Web Analytics and Speed Insights record aggregated, cookieless statistics on page visits and loading performance. Your light/dark preference is stored only in your own browser.",
   },
   {
     title: "When you contact me",
@@ -30,7 +30,7 @@ const sections: { title: string; body: string }[] = [
   },
   {
     title: "Where the data goes",
-    body: "Vercel processes the hosting logs as my processor; it is based in the United States and covered by the EU–US Data Privacy Framework and standard contractual clauses. Nothing is sold or shared for advertising.",
+    body: "Vercel processes the hosting logs and these statistics as my processor; it is based in the United States and covered by the EU–US Data Privacy Framework and standard contractual clauses. Nothing is sold or shared for advertising.",
   },
   {
     title: "Your rights",
