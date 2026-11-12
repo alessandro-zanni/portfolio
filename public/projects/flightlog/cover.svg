@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000">
+  <defs>
+    <pattern id="grid" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#7cc4ef" opacity="0.45" />
+    </pattern>
+  </defs>
+  <rect width="1600" height="1000" fill="#a9dffb" />
+  <rect width="1600" height="1000" fill="url(#grid)" />
+
+  <!-- signature brick mark -->
+  <g transform="translate(1370,60) scale(1.5)">
+    <path d="M9 33 L50 54 L50 88 L9 67 Z" fill="#a81f1b" stroke="#10100f" stroke-width="3" stroke-linejoin="round" />
+    <path d="M91 33 L50 54 L50 88 L91 67 Z" fill="#e02b26" stroke="#10100f" stroke-width="3" stroke-linejoin="round" />
+    <path d="M50 12 L91 33 L50 54 L9 33 Z" fill="#ec6a63" stroke="#10100f" stroke-width="3" stroke-linejoin="round" />
+    <ellipse cx="34" cy="27" rx="7" ry="4" fill="#ec6a63" />
+    <ellipse cx="52" cy="18" rx="7" ry="4" fill="#ec6a63" />
+    <ellipse cx="48" cy="39" rx="7" ry="4" fill="#ec6a63" />
+    <ellipse cx="66" cy="30" rx="7" ry="4" fill="#ec6a63" />
+  </g>
+
+  <!-- route map: airports joined by great-circle arcs, a plane on the main one -->
+  <g transform="translate(360,180)">
+    <rect x="0" y="0" width="880" height="560" fill="#ffffff" stroke="#10100f" stroke-width="6" />
+    <path d="M140 420 Q440 40 740 300" fill="none" stroke="#0f6fc4" stroke-width="8" />
+    <path d="M140 420 Q300 300 460 440" fill="none" stroke="#10100f" stroke-width="5" stroke-dasharray="16 12" />
+    <path d="M460 440 Q600 260 740 300" fill="none" stroke="#10100f" stroke-width="5" stroke-dasharray="16 12" />
+    <path d="M140 420 Q200 200 300 140" fill="none" stroke="#10100f" stroke-width="5" stroke-dasharray="16 12" />
+    <circle cx="140" cy="420" r="22" fill="#e02b26" stroke="#10100f" stroke-width="5" />
+    <circle cx="740" cy="300" r="22" fill="#f5c000" stroke="#10100f" stroke-width="5" />
+    <circle cx="460" cy="440" r="16" fill="#ffffff" stroke="#10100f" stroke-width="5" />
+    <circle cx="300" cy="140" r="16" fill="#ffffff" stroke="#10100f" stroke-width="5" />
+    <g transform="translate(440,175) rotate(20)">
+      <path d="M-50 0 L50 0 M10 0 L-20 -40 M10 0 L-20 40 M-40 0 L-55 -18 M-40 0 L-55 18" stroke="#10100f" stroke-width="12" stroke-linecap="round" fill="none" />
+    </g>
+  </g>
+</svg>

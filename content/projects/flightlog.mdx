@@ -1,0 +1,28 @@
+## The problem
+
+Years of flights scattered across airline emails and booking apps, with no
+single view of where and how often. Live-tracking apps solve a different
+problem and charge for it.
+
+## What I built
+
+- A flight history with a route map, statistics and the full list of past
+  flights
+- **Automatic import from email**: booking confirmations forwarded to a
+  dedicated address reach a Cloudflare Email Worker, and Claude extracts the
+  legs — including schedule changes and cancellations that replace an earlier
+  booking
+- The worker accepts mail only when the sender passes SPF for its own domain,
+  and a mail that fails to import bounces back instead of disappearing
+
+## How it's built
+
+Next.js 16 and Supabase, MapLibre and d3-geo for the map, the Claude API for
+extraction, a Cloudflare Worker for inbound mail. Separate production and
+staging environments, each with its own database, deployed from GitHub
+Actions after lint, typecheck and tests.
+
+## Outcome
+
+In daily use, live behind a login. The repository is public, with its history
+cleaned of booking references and personal emails before publishing.

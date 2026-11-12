@@ -1,0 +1,30 @@
+## The problem
+
+Two open-source apps I use every day had gaps on my setup: a terminal music
+player that froze on macOS audio edge cases, and a Jellyfin client that ran
+on the Mac only as an iPad app.
+
+## What I built
+
+- **[spotatui](https://github.com/LargeModGames/spotatui)**, a terminal music
+  player in Rust:
+  [#498](https://github.com/LargeModGames/spotatui/pull/498) fixes two
+  playback freezes and enables the alternative audio sources on macOS;
+  [#499](https://github.com/LargeModGames/spotatui/pull/499) scans nested
+  folders so a two-level local music library is browsable. Both merged
+- **[Streamyfin](https://github.com/streamyfin/streamyfin)**, a Jellyfin
+  client in Expo and React Native: a native Mac Catalyst build, proposed in
+  [streamyfin#2080](https://github.com/streamyfin/streamyfin/issues/2080),
+  with the player's Catalyst slice sent as
+  [MPVKit#2](https://github.com/streamyfin/MPVKit/pull/2)
+
+## How it's built
+
+Each change follows the upstream project's conventions and review process,
+not mine: issue first where the maintainers ask for one, small focused PRs,
+forks kept aligned with upstream.
+
+## Outcome
+
+Two PRs merged into spotatui and shipped in its releases. The Streamyfin
+Catalyst build is waiting on the maintainers.
