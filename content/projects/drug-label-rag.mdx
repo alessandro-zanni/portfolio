@@ -1,0 +1,32 @@
+## The problem
+
+"Can I take ibuprofen with warfarin?" is the kind of question where a fluent
+answer without a source is worse than no answer. The goal: answers over
+public drug labels that always show the label section they come from — run
+as if it were going to production, eval and infrastructure included.
+
+## What I built
+
+- **Ingestion**: openFDA labels, one per drug, split by label section,
+  embedded with Titan on AWS Bedrock and stored in Postgres with pgvector
+- **Retrieval**: hybrid search, vector plus full-text, so drug names and
+  exact terms are not left to embeddings alone
+- **Answers** with Claude on Bedrock and native citations, under one hard
+  rule: no cited source, no answer. Every response carries a not-medical-advice
+  disclaimer
+- **Eval**: a golden set with retrieval recall and LLM-judge faithfulness
+  scoring, meant to gate merges on regressions
+
+## How it's built
+
+Python 3.13 and FastAPI for the API, React and TypeScript for the web client,
+Postgres 17 with pgvector, all in Docker Compose locally. The AWS target is
+ECS Fargate, RDS and CloudFront, provisioned with Terraform and deployed from
+GitHub Actions through OIDC — no long-lived credentials.
+
+## Outcome
+
+In progress. Ingestion and the eval runner are done, with a retrieval
+baseline of 30/34 on the golden set; cited generation is waiting on Bedrock
+model access. Next: an agent mode with tool use, then the same golden set run
+against an open model on Bedrock, to pick on numbers rather than habit.

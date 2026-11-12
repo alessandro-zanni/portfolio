@@ -1,11 +1,14 @@
 import { ArrowRight } from "lucide-react"
 import Link from "next/link"
 
-import { projects } from "@/lib/projects"
+import { projects, statusLabel } from "@/lib/projects"
 
-import { ActionLink } from "./kit"
+import { ActionLink, Plate } from "./kit"
+import { ProjectLinks } from "./project-links"
 import { StackTags } from "./stack-tags"
 import { BuildStep, SectionHead } from "./step"
+
+const featured = projects.filter((project) => project.featured)
 
 export function Projects() {
   return (
@@ -14,25 +17,41 @@ export function Projects() {
         id="projects"
         n="02"
         title="Projects"
-        note="Sub-assemblies built solo, outside the day job."
+        note="Selected work: AI systems and client products, built end to end."
       />
       <ol className="mt-8 flex flex-col gap-8">
-        {projects.map((project, i) => (
+        {featured.map((project, i) => (
           <li key={project.slug}>
             <BuildStep
               n={`0${i + 1}`}
               company={project.title}
+              meta={project.period}
+              role={project.role}
               piece={project.piece}
-              pieceTag={project.status === "shipped" ? "shipped" : "in progress"}
+              pieceTag={statusLabel(project.status).toLowerCase()}
               blurb={project.subtitle}
               bullets={project.bullets}
-              last={i === projects.length - 1}
+              last={i === featured.length - 1}
             >
+              <Link href={`/projects/${project.slug}`} tabIndex={-1} aria-hidden="true">
+                <Plate className="mt-4 max-w-md p-1.5">
+                  {/* eslint-disable-next-line @next/next/no-img-element -- covers mix svg/jpg, generated locally */}
+                  <img
+                    src={project.cover}
+                    alt=""
+                    loading="lazy"
+                    className="aspect-[16/10] w-full border border-plate object-cover object-top"
+                  />
+                </Plate>
+              </Link>
               <StackTags items={project.stack} />
-              <ActionLink href={`/projects/${project.slug}`} variant="secondary" className="mt-4">
-                View project
-                <ArrowRight className="size-4" aria-hidden="true" />
-              </ActionLink>
+              <div className="mt-4 flex flex-wrap gap-3">
+                <ActionLink href={`/projects/${project.slug}`} variant="primary">
+                  Case study
+                  <ArrowRight className="size-4" aria-hidden="true" />
+                </ActionLink>
+                <ProjectLinks links={project.links} />
+              </div>
             </BuildStep>
           </li>
         ))}
@@ -42,7 +61,7 @@ export function Projects() {
         href="/projects"
         className="mt-6 inline-flex items-center gap-1.5 pl-14 text-sm font-semibold text-bolt underline-offset-4 hover:underline sm:pl-16"
       >
-        View all projects
+        View all {projects.length} projects
         <ArrowRight className="size-4" aria-hidden="true" />
       </Link>
     </section>

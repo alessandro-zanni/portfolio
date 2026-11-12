@@ -1,16 +1,17 @@
 import { readFile } from "node:fs/promises"
 import path from "node:path"
 import type { Metadata } from "next"
-import { ArrowLeft, ArrowUpRight, Code2 } from "lucide-react"
+import { ArrowLeft, ArrowRight } from "lucide-react"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { compileMDX } from "next-mdx-remote/rsc"
 
 import { Colophon } from "@/components/portfolio/colophon"
-import { ActionLink, PieceTag, Plate } from "@/components/portfolio/kit"
+import { PieceTag, Plate } from "@/components/portfolio/kit"
+import { ProjectLinks } from "@/components/portfolio/project-links"
 import { StackTags } from "@/components/portfolio/stack-tags"
 import { profile } from "@/lib/resume"
-import { getProject, projects } from "@/lib/projects"
+import { getProject, projectKinds, projects, statusLabel } from "@/lib/projects"
 import { mdxComponents, remarkUnwrapImages } from "@/mdx-components"
 
 export function generateStaticParams() {
@@ -41,9 +42,9 @@ export async function generateMetadata({
 
 export default async function ProjectPage({
   params,
-}: {
+}: Readonly<{
   params: Promise<{ slug: string }>
-}) {
+}>) {
   const { slug } = await params
   const project = getProject(slug)
   if (!project) notFound()
@@ -55,6 +56,16 @@ export default async function ProjectPage({
     components: mdxComponents(),
     options: { mdxOptions: { remarkPlugins: [remarkUnwrapImages] } },
   })
+
+  const i = projects.indexOf(project)
+  const prev = projects[(i - 1 + projects.length) % projects.length]
+  const next = projects[(i + 1) % projects.length]
+  const facts = [
+    ["Role", project.role],
+    ["Type", projectKinds[project.kind]],
+    ["Status", statusLabel(project.status)],
+    ["Period", project.period],
+  ]
 
   return (
     <div className="min-h-svh bg-blueprint">
@@ -73,46 +84,85 @@ export default async function ProjectPage({
               {project.title}
             </h1>
             <div className="flex shrink-0 items-center gap-3">
-              <PieceTag>{project.status === "shipped" ? "Shipped" : "In progress"}</PieceTag>
+              <PieceTag>{statusLabel(project.status)}</PieceTag>
               <span className="font-mono text-xs text-ink-soft">{project.period}</span>
             </div>
           </div>
           <p className="mt-3 max-w-xl text-sm leading-relaxed text-ink-soft sm:text-base">
             {project.subtitle}
           </p>
-          <StackTags items={project.stack} />
-
-          {project.links ? (
-            <div className="mt-6 flex flex-wrap gap-3 border-t-2 border-ink pt-5">
-              {project.links.repo ? (
-                <ActionLink href={project.links.repo} variant="secondary" target="_blank" rel="noreferrer">
-                  <Code2 className="size-4" aria-hidden="true" />
-                  View repo
-                </ActionLink>
-              ) : null}
-              {project.links.demo ? (
-                <ActionLink href={project.links.demo} variant="primary" target="_blank" rel="noreferrer">
-                  Open live
-                  <ArrowUpRight className="size-4" aria-hidden="true" />
-                </ActionLink>
-              ) : null}
-            </div>
-          ) : null}
         </div>
       </header>
 
       <main className="grid-ground">
         <div className="mx-auto max-w-5xl px-5 py-14 sm:px-8 sm:py-20">
           <Plate className="overflow-hidden p-1.5">
-            {/* eslint-disable-next-line @next/next/no-img-element -- covers mix svg/png, generated locally */}
+            {/* eslint-disable-next-line @next/next/no-img-element -- covers mix svg/jpg, generated locally */}
             <img
               src={project.cover}
               alt=""
-              className="aspect-[16/9] w-full border border-plate object-cover"
+              className="aspect-[16/9] w-full border border-plate object-cover object-top"
             />
           </Plate>
 
-          <div className="mt-10">{content}</div>
+          <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_17rem]">
+            <aside className="lg:order-2">
+              <Plate className="p-5 lg:sticky lg:top-8">
+                <h2 className="font-display text-sm tracking-tight text-ink uppercase">Fact sheet</h2>
+                <dl className="mt-3 flex flex-col gap-3 text-sm">
+                  {facts.map(([term, value]) => (
+                    <div key={term}>
+                      <dt className="font-mono text-[0.7rem] tracking-wide text-ink-soft uppercase">
+                        {term}
+                      </dt>
+                      <dd className="mt-0.5 font-medium text-ink">{value}</dd>
+                    </div>
+                  ))}
+                  <div>
+                    <dt className="font-mono text-[0.7rem] tracking-wide text-ink-soft uppercase">
+                      Stack
+                    </dt>
+                    <dd>
+                      <StackTags items={project.stack} />
+                    </dd>
+                  </div>
+                </dl>
+                {project.links ? (
+                  <div className="mt-5 flex flex-wrap gap-3 border-t-2 border-ink pt-4">
+                    <ProjectLinks links={project.links} />
+                  </div>
+                ) : null}
+              </Plate>
+            </aside>
+            <div className="min-w-0 lg:order-1">{content}</div>
+          </div>
+
+          <nav
+            aria-label="More projects"
+            className="mt-16 grid gap-4 border-t-2 border-ink pt-6 sm:grid-cols-2"
+          >
+            <Link href={`/projects/${prev.slug}`} className="group flex flex-col gap-1">
+              <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-bolt uppercase">
+                <ArrowLeft className="size-3.5" aria-hidden="true" />
+                Previous
+              </span>
+              <span className="font-display text-base tracking-tight text-ink uppercase group-hover:underline">
+                {prev.title}
+              </span>
+            </Link>
+            <Link
+              href={`/projects/${next.slug}`}
+              className="group flex flex-col gap-1 sm:items-end sm:text-right"
+            >
+              <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-bolt uppercase">
+                Next
+                <ArrowRight className="size-3.5" aria-hidden="true" />
+              </span>
+              <span className="font-display text-base tracking-tight text-ink uppercase group-hover:underline">
+                {next.title}
+              </span>
+            </Link>
+          </nav>
         </div>
       </main>
 

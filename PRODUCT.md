@@ -64,7 +64,7 @@ Breadth is deliberate and evidenced: employee and freelance, frontend and backen
 ## Product Principles
 
 1. **Skimmable in ten seconds, credible in two minutes.** The non-technical agency screener and the technical peer both get what they need from the same page without a mode switch.
-2. **Evidence over adjectives.** Every claim traces to a role, a shipped product, or a named technology in the CV. If it isn't in the CV, it isn't on the site.
+2. **Evidence over adjectives.** Experience claims trace to a role or a named technology in the CV. Projects outside the CV are allowed only with a verifiable public artifact (a public repo, a live product, or merged upstream work), and their write-ups state only what that artifact shows.
 3. **Two signals must survive any redesign: production AI/LLM work, and end-to-end ownership.** These are the reasons to contact him rather than the next engineer.
 4. **The page is the proof.** For someone who claims full-stack skill and a design background, the site's own craft is a work sample — it has to hold up as one.
 5. **He maintains this alone.** Content stays in one typed file; structure stays simple enough to edit in five minutes between jobs.

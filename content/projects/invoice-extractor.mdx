@@ -1,0 +1,46 @@
+## The problem
+
+Reading invoices and receipts with an LLM is easy to demo and hard to trust.
+The strong model is accurate but expensive on every document; the cheap one is
+fast but sometimes misreads a number, and nothing tells you which documents
+it got wrong.
+
+## What I built
+
+An extractor that pays for the strong model only when it has a reason to:
+
+- **Claude Haiku** reads the PDF or photo into a schema, copying numbers as
+  printed and never fixing the arithmetic
+- **Deterministic checks**, no LLM: line math with discounts, lines summing to
+  the subtotal, subtotal − discount + tax = total, the Italian VAT checksum,
+  the Spanish DNI/NIE check letter, a plausible date
+- Only when a check fails, **Claude Opus** reads the document again. If Opus
+  fails the same checks, the document itself doesn't add up; if it fails
+  different ones, the reading is uncertain. A reviewer handles the two very
+  differently, so the review queue says which is which
+
+![Upload a photo of an invoice with a wrong tax id: Haiku extracts it, the checksum fails, Opus confirms, and the document goes to review](/projects/invoice-extractor/demo.gif)
+
+## How it's built
+
+Next.js 16 with the Claude API and structured outputs validated by Zod,
+Supabase for auth and storage, Vercel in Frankfurt. The eval is the core of
+the repo: a golden set of synthetic Italian and Spanish invoices with exact
+ground truth (including deliberately wrong ones that must go to review), real
+receipts from the CORD and SROIE datasets and invoices from FATURA. Fields are
+scored by exact match — no LLM judge — and tuning happens only on the dev
+split.
+
+## Outcome
+
+On the held-out test split of 46 documents:
+
+- **Routed** (Haiku → checks → Opus): 89.1% of documents fully right, 0 false
+  alarms on 15 clean invoices, every printed error caught, at 36% of the cost
+  of Opus on everything
+- **Haiku only**: 87.0%, one false alarm. **Opus only**: 93.5%, one false
+  alarm
+
+The README spells out what the numbers don't say too: routing only catches
+errors that break the arithmetic, and on a sample this size one document is
+two to three points.
