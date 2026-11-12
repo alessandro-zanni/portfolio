@@ -25,6 +25,17 @@ DNS is on Cloudflare. CI (`.github/workflows/ci.yml`) runs lint and typecheck
 on `main`, `develop` and PRs. `VERCEL_TOKEN` lives in `.envrc` (direnv, not
 committed); no env vars on Vercel.
 
+## Adding a project
+
+1. An entry in `lib/projects.ts`: `kind` (group on `/projects`), `featured`
+   (shown on the homepage, keep it to about four), `role`, `status`, links.
+2. `content/projects/<slug>.mdx` with the four fixed sections: `## The problem`,
+   `## What I built`, `## How it's built`, `## Outcome`. Only facts the public
+   repo, live product or merged PR shows (rule in `PRODUCT.md`).
+3. Cover in `public/projects/<slug>/cover.(jpg|svg)`, 16:10; SVGs follow the
+   style of the existing ones. Screenshots never show real users' data.
+4. Renaming a slug: add a permanent redirect in `next.config.ts`.
+
 ## Static analysis (SonarQube)
 
 Local only, not in CI: the shared SonarQube Community server lives in
