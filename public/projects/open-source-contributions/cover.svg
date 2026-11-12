@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000">
+  <defs>
+    <pattern id="grid" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#7cc4ef" opacity="0.45" />
+    </pattern>
+  </defs>
+  <rect width="1600" height="1000" fill="#a9dffb" />
+  <rect width="1600" height="1000" fill="url(#grid)" />
+
+  <!-- signature brick mark -->
+  <g transform="translate(1370,60) scale(1.5)">
+    <path d="M9 33 L50 54 L50 88 L9 67 Z" fill="#a81f1b" stroke="#10100f" stroke-width="3" stroke-linejoin="round" />
+    <path d="M91 33 L50 54 L50 88 L91 67 Z" fill="#e02b26" stroke="#10100f" stroke-width="3" stroke-linejoin="round" />
+    <path d="M50 12 L91 33 L50 54 L9 33 Z" fill="#ec6a63" stroke="#10100f" stroke-width="3" stroke-linejoin="round" />
+    <ellipse cx="34" cy="27" rx="7" ry="4" fill="#ec6a63" />
+    <ellipse cx="52" cy="18" rx="7" ry="4" fill="#ec6a63" />
+    <ellipse cx="48" cy="39" rx="7" ry="4" fill="#ec6a63" />
+    <ellipse cx="66" cy="30" rx="7" ry="4" fill="#ec6a63" />
+  </g>
+
+  <!-- a contribution branch forking off and merging back into main -->
+  <g transform="translate(300,260)">
+    <path d="M0 360 L1000 360" stroke="#10100f" stroke-width="10" />
+    <path d="M200 360 C260 360 260 120 340 120 L660 120 C740 120 740 360 800 360" fill="none" stroke="#0f6fc4" stroke-width="10" />
+    <circle cx="80" cy="360" r="30" fill="#ffffff" stroke="#10100f" stroke-width="6" />
+    <circle cx="200" cy="360" r="30" fill="#ffffff" stroke="#10100f" stroke-width="6" />
+    <circle cx="440" cy="120" r="30" fill="#0f6fc4" stroke="#10100f" stroke-width="6" />
+    <circle cx="560" cy="120" r="30" fill="#0f6fc4" stroke="#10100f" stroke-width="6" />
+    <circle cx="800" cy="360" r="40" fill="#f5c000" stroke="#10100f" stroke-width="6" />
+    <circle cx="930" cy="360" r="30" fill="#ffffff" stroke="#10100f" stroke-width="6" />
+  </g>
+</svg>
