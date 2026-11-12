@@ -42,9 +42,9 @@ export async function generateMetadata({
 
 export default async function ProjectPage({
   params,
-}: {
+}: Readonly<{
   params: Promise<{ slug: string }>
-}) {
+}>) {
   const { slug } = await params
   const project = getProject(slug)
   if (!project) notFound()

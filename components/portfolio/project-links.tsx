@@ -5,7 +5,7 @@ import type { ProjectMeta } from "@/lib/projects"
 import { ActionLink } from "./kit"
 
 /** Repo and live-demo buttons for a project; renders nothing when it has neither. */
-export function ProjectLinks({ links }: { links: ProjectMeta["links"] }) {
+export function ProjectLinks({ links }: Readonly<{ links: ProjectMeta["links"] }>) {
   if (!links?.repo && !links?.demo) return null
   return (
     <>
