@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { headers } from "next/headers"
 import { Archivo, Archivo_Black, Geist_Mono } from "next/font/google"
 
 import "./globals.css"
@@ -81,11 +82,14 @@ finish review, the verdict, DESIGN.md, and every shipping raster carrying its
 provenance.
 -->`
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  // Set by proxy.ts; reading it also makes every page dynamic, as nonces need.
+  const nonce = (await headers()).get("x-nonce") ?? undefined
+
   return (
     <html
       lang="en"
@@ -100,7 +104,7 @@ export default function RootLayout({
     >
       <body>
         <div hidden dangerouslySetInnerHTML={{ __html: DIRECTION_CONTRACT }} />
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider nonce={nonce}>{children}</ThemeProvider>
         <Analytics />
         <SpeedInsights />
       </body>
