@@ -4,7 +4,6 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [{ source: "/projects/traccia", destination: "/projects/bodytrack", permanent: true }]
   },
-  // ponytail: no CSP yet, Next's inline scripts need nonces; add it with them.
   async headers() {
     return [
       {
