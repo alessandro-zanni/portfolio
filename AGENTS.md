@@ -25,6 +25,11 @@ DNS is on Cloudflare. CI (`.github/workflows/ci.yml`) runs lint and typecheck
 on `main`, `develop` and PRs. `VERCEL_TOKEN` lives in `.envrc` (direnv, not
 committed); no env vars on Vercel.
 
+The CSP is set per request in `proxy.ts` with a nonce (passed to next-themes'
+`ThemeProvider`), so every page is dynamic: accepted trade-off. Releases are
+tagged `vX.Y.Z` on the version commit, starting from `v1.2.0` (1.0.0 and 1.1.0
+have no tag).
+
 ## Adding a project
 
 1. An entry in `lib/projects.ts`: `kind` (group on `/projects`), `featured`
