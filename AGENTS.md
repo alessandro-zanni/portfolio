@@ -13,13 +13,16 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 Vercel team AZ Projects (the personal account, not a dedicated one: a dedicated
 account needs a phone number already in use). Native Git integration, no deploy
-workflow: each project builds only its own branch through the ignore step
-`[ "$VERCEL_GIT_COMMIT_REF" != <branch> ]`. Functions in `fra1` (`vercel.json`).
+workflow. One project, `portfolio`: Production on `main`, staging is the Preview
+of `develop`. The ignore step
+`[ "$VERCEL_GIT_COMMIT_REF" != "main" ] && [ "$VERCEL_GIT_COMMIT_REF" != "develop" ]`
+skips every other branch. The old `portfolio-staging` project is kept but no
+longer builds (ignore step `exit 0`). Functions in `fra1` (`vercel.json`).
 
-| Branch    | Vercel project      | URL                                              | Protection                  |
-| --------- | ------------------- | ------------------------------------------------ | --------------------------- |
-| `main`    | `portfolio`         | www.alessandrozanni.dev (public)                 | Vercel login except domains |
-| `develop` | `portfolio-staging` | staging.alessandrozanni.dev, portfolio-staging-eta.vercel.app | Vercel login on all deploys |
+| Branch    | Environment | URL                                         | Protection                      |
+| --------- | ----------- | ------------------------------------------- | ------------------------------- |
+| `main`    | Production  | www.alessandrozanni.dev (public)            | Standard: public                |
+| `develop` | Preview     | staging.alessandrozanni.dev (branch domain) | Standard: Vercel login required |
 
 DNS is on Cloudflare. CI (`.github/workflows/ci.yml`) runs lint and typecheck
 on `main`, `develop` and PRs. `VERCEL_TOKEN` lives in `.envrc` (direnv, not
