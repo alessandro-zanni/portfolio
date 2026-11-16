@@ -16,8 +16,7 @@ account needs a phone number already in use). Native Git integration, no deploy
 workflow. One project, `portfolio`: Production on `main`, staging is the Preview
 of `develop`. The ignore step
 `[ "$VERCEL_GIT_COMMIT_REF" != "main" ] && [ "$VERCEL_GIT_COMMIT_REF" != "develop" ]`
-skips every other branch. The old `portfolio-staging` project is kept but no
-longer builds (ignore step `exit 0`). Functions in `fra1` (`vercel.json`).
+skips every other branch. Functions in `fra1` (`vercel.json`).
 
 | Branch    | Environment | URL                                         | Protection                      |
 | --------- | ----------- | ------------------------------------------- | ------------------------------- |
